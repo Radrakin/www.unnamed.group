@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Unnamed Arma Group</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+			/* temporary - use a file instead! */
+			@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+			body { 
+				background: url(meme-bg.jpg) no-repeat center center fixed; 
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+			}
+			h1, h3 {
+				color: white;
+				font-weight: bold;
+				font-family: 'Roboto Mono', monospace;
+			}
+			#site-wrap {
+				height: 100vh;
+			}
+			#box1 {
+				background-color: rgba(0, 0, 0, 0.6);
+				padding: 2em;
+				text-align: center;
+			}
+			#discordButton {
+				background-color: #7289DA;
+			}
+			#discordButton > img {
+				height: 3em;
+			}
+		</style>
+</head>
+<body>
+<div class="container">
+<div id="site-wrap" class="row">
+<div id="box1" class="card mx-auto my-auto rounded-0">
+<h1>
+Unnamed Arma Group
+</h1>
+<h3>
+"No Bullshit" <u>MILSIM</u>
+</h3>
+<br>
+<div class="row">
+<div class="col"></div>
+<button id="discordButton" type="button" class="btn btn-primary col" onClick="discordClicked()">
+<img src="https://discordapp.com/assets/192cb9459cbc0f9e73e2591b700f1857.svg" />
+</button>
+<div class="col"></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+			function discordClicked() {
+				console.log("Discord button clicked, doing shit...");
+				
+				window.open('https://armapmc.com/discord', '_blank');
+				
+				console.log("Shit done, why are you still here?");
+			}
+		</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>

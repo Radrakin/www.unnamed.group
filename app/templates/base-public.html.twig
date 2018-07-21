@@ -8,6 +8,19 @@
 		<link rel="stylesheet" type="text/css" href="assets/main.css">
 	</head>
 	<body>
+		<nav class="navbar navbar-dark bg-dark">
+			<a class="navbar-brand" href="{{ path("home") }}">
+				<img src="https://gitlab.com/uploads/-/system/group/avatar/3162142/yeet21.png">
+				<span>UAGPMC</span>
+			</a>
+			<a class="nav-link" href="{{ path("about") }}">About</a>
+			<a class="nav-link joinLink disabled" href="javascript:void()">Media</a>
+			<a class="nav-link joinLink disabled" href="javascript:void()">Join</a>
+			<div id="navbarRight">
+				<a class="nav-link" href="javascript:void()">Login</a>
+			</div>
+		</nav>
+
 		{% block body %}{% endblock %}
 
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

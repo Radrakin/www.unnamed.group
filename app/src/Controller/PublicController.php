@@ -14,4 +14,12 @@ class PublicController extends Controller
     {
         return $this->render('public/index.html.twig');
     }
+
+    /**
+     * @Route("/about", name="about")
+     */
+    public function about()
+    {
+        return $this->render('public/about.html.twig');
+    }
 }

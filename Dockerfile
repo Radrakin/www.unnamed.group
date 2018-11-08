@@ -1,6 +1,6 @@
 FROM alpine:3.8
 
-RUN apk add --update --no-cache util-linux nodejs nodejs-npm
+RUN apk add --update --no-cache util-linux nodejs nodejs-npm git
 
 COPY . ./uagpmc.com
 

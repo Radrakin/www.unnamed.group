@@ -1,5 +1,8 @@
 /* GLOBAL */
-	@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+	@font-face {
+	  font-family: Purista;
+	  src: url("/static/fonts/purista.otf") format("opentype");
+	}
 	body {
 		background: url("/static/img/bg1.jpg") no-repeat center center fixed;
 		-webkit-background-size: cover;
@@ -10,7 +13,7 @@
 	body * {
 		color: white;
 		font-weight: bold;
-		font-family: 'Roboto Mono', monospace;
+		font-family: 'Purista', monospace;
 	}
 	#site-wrap {
 		height: 80vh;
@@ -19,7 +22,7 @@
 
 /* NAVBAR */
 	.bg-dark {
-		background: #f00 !important;
+		background: #90b477 !important;
 		padding: 0;
 		color: white;
 	}

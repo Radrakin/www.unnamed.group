@@ -5,11 +5,11 @@ export default class extends React.Component {
   static async getInitialProps({ res }) {
     if (res) {
       res.writeHead(302, {
-        Location: 'http://armapmc.com/discord'
+        Location: 'https://discord.gg/eNkDNRh'
       })
       res.end()
     } else {
-      Router.push('http://armapmc.com/discord')
+      Router.push('https://discord.gg/eNkDNRh')
     }
     return {}
   }

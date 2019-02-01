@@ -1,7 +1,7 @@
 /* GLOBAL */
 	@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
-	body { 
-		background: url(meme-bg.jpg) no-repeat center center fixed; 
+	body {
+		background: url(meme-bg.jpg) no-repeat center center fixed;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -19,7 +19,7 @@
 
 /* NAVBAR */
 	.bg-dark {
-		background: #f00 !important;
+		background: #90b477 !important;
 		padding: 0;
 		color: white;
 	}
@@ -64,4 +64,3 @@
 		height: 3em;
 	}
 /* END */
-

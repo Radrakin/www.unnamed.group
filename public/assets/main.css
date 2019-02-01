@@ -1,0 +1,67 @@
+/* GLOBAL */
+	@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+	body { 
+		background: url(meme-bg.jpg) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	body * {
+		color: white;
+		font-weight: bold;
+		font-family: 'Roboto Mono', monospace;
+	}
+	#site-wrap {
+		height: 80vh;
+	}
+/* END */
+
+/* NAVBAR */
+	.bg-dark {
+		background: #f00 !important;
+		padding: 0;
+		color: white;
+	}
+	.bg-dark a:hover {
+		color: black;
+	}
+	.disabled, .disabled:hover {
+		color: gray !important;
+	}
+	.nav-link {
+		text-transform: uppercase;
+	}
+	#navbarRight {
+		background: black;
+		text-align: right;
+	}
+	.navbar-brand {
+		background: #000;
+		padding-right: 1em;
+		padding-left: 1em;
+	}
+	.navbar-brand img {
+		position: absolute;
+		height: 5em;
+		width: 5em;
+	}
+	.navbar-brand span {
+		margin-left: 6em;
+	}
+/* END */
+
+/* HOME */
+	#box1 {
+		background-color: rgba(0, 0, 0, 0.6);
+		padding: 2em;
+		text-align: center;
+	}
+	#discordButton {
+		background-color: #7289DA;
+	}
+	#discordButton > img {
+		height: 3em;
+	}
+/* END */
+

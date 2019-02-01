@@ -15,6 +15,10 @@
 	#site-wrap {
 		height: 80vh;
 	}
+	hr {
+		background-color: #fff;
+		height: 1px;
+	}
 /* END */
 
 /* NAVBAR */

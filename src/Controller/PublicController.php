@@ -12,7 +12,15 @@ class PublicController extends AbstractController
      */
     public function index()
     {
-        return $this->render('public/index.html.twig');
+        if ($this->getUser()) {
+            return $this->render('public/index.html.twig', [
+                "DiscordUsername" => $this->getUser()->getDiscordUsername(),
+                "DiscordId" => $this->getUser()->getDiscordId(),
+                "DiscordAvatarHash" => $this->getUser()->getDiscordAvatarHash()
+            ]);
+        } else {
+            return $this->render('public/index.html.twig');
+        }
     }
 
     /**

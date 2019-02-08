@@ -12,7 +12,7 @@ ENV OAUTH_DISCORD_CLIENT_SECRET ${OAUTH_DISCORD_CLIENT_SECRET}
 ARG MAILER_URL
 ENV MAILER_URL ${MAILER_URL}
 
-RUN apk add --update --no-cache util-linux composer zip libpng-dev git mongodb alpine-sdk autoconf && \
+RUN apk add --update --no-cache libressl-dev util-linux composer zip libpng-dev git mongodb alpine-sdk autoconf && \
         docker-php-ext-install pcntl mysqli pdo gd zip
 
 RUN pecl install mongodb

@@ -34,14 +34,14 @@
         "symfony/web-link": "^4.1",
         "symfony/webpack-encore-pack": "*",
         "symfony/yaml": "^4.1",
-        "wohali/oauth2-discord-new": "^1.0"
+        "wohali/oauth2-discord-new": "^1.0",
+        "symfony/web-server-bundle": "^4.1"
     },
     "require-dev": {
         "symfony/debug-pack": "*",
         "symfony/maker-bundle": "^1.0",
         "symfony/profiler-pack": "*",
-        "symfony/test-pack": "^1.0",
-        "symfony/web-server-bundle": "^4.1"
+        "symfony/test-pack": "^1.0"
     },
     "config": {
         "preferred-install": {

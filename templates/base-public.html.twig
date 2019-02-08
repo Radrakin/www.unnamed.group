@@ -17,7 +17,11 @@
 			<a class="nav-link joinLink disabled" href="javascript:void()">Media</a>
 			<a class="nav-link joinLink disabled" href="javascript:void()">Join</a>
 			<div id="navbarRight">
-				<a class="nav-link" href="javascript:void()">Login</a>
+				{% if app.user %}
+					 <a class="nav-link" href="/logout" style="background-color: red !important;">Logout</a>
+				{% else %}
+					 <a class="nav-link" href="{{ path("connect_discord_start") }}">Login With Discord</a>
+				{% endif %}
 			</div>
 		</nav>
 

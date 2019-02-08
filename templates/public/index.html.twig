@@ -4,12 +4,20 @@
 <div class="container">
 	<div id="site-wrap" class="row">
 		<div id="box1" class="card mx-auto my-auto rounded-0">
-			<h1>
-				Unnamed Arma Group
-			</h1>
-			<h3>
-				"No Bullshit" <u>MILSIM</u>
-			</h3>
+			{% if app.user %}
+				<img src="https://cdn.discordapp.com/avatars/{{ DiscordId }}/{{ DiscordAvatarHash }}" style="width: 10em; margin: auto;">
+				<br>
+				<h1>
+					Welcome back, {{ DiscordUsername }}!
+				</h1>
+			{% else %}
+				<h1>
+				 Unnamed Arma Group
+				</h1>
+				<h3>
+				 "No Bullshit" <u>MILSIM</u>
+				</h3>
+			{% endif %}
 			<br>
 			<div class="row">
 			<div class="col"></div>

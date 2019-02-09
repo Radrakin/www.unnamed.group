@@ -33,3 +33,7 @@ services:
 
     app.api.controller:
         class: "%app.controller.api.class%"
+
+    Symfony\Component\HttpFoundation\Session\Storage\Handler\MongoDbSessionHandler:
+      arguments:
+        - {database: testDb, collection: sessions}

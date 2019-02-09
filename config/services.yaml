@@ -34,7 +34,16 @@ services:
     app.api.controller:
         class: "%app.controller.api.class%"
 
-    Symfony\Component\HttpFoundation\Session\Storage\Handler\MongoDbSessionHandler:
+    mongo.connection:
+        class: MongoDoctrine\MongoDB\Connection
+        factory: [ "@doctrine_mongodb.odm.document_manager", getConnection ]
+        calls:
+           - [initialize, []]
+    mongo:
+        class: MongoDB
+        factory: [ "@doctrine_mongodb.odm.default_connection", getMongoClient ]
+
+    App\Handler\MongoDbSessionHandler:
       arguments:
-        - database: testDb
-        - collection: sessions
+        - "@mongo"
+        - { database: testDb, collection: sessions }

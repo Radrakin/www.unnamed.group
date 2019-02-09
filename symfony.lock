@@ -101,8 +101,38 @@
     "fig/link-util": {
         "version": "1.0.0"
     },
+    "firebase/php-jwt": {
+        "version": "v5.0.0"
+    },
     "friendsofsymfony/user-bundle": {
         "version": "v2.1.2"
+    },
+    "google/auth": {
+        "version": "v1.4.0"
+    },
+    "google/cloud-core": {
+        "version": "v1.26.0"
+    },
+    "google/cloud-error-reporting": {
+        "version": "v0.12.4"
+    },
+    "google/cloud-logging": {
+        "version": "v1.14.4"
+    },
+    "google/common-protos": {
+        "version": "0.1.0"
+    },
+    "google/gax": {
+        "version": "0.38.0"
+    },
+    "google/grpc-gcp": {
+        "version": "0.1.3"
+    },
+    "google/protobuf": {
+        "version": "v3.6.1.3"
+    },
+    "grpc/grpc": {
+        "version": "1.15.0"
     },
     "guzzlehttp/guzzle": {
         "version": "6.3.3"
@@ -175,6 +205,9 @@
     },
     "ralouphie/getallheaders": {
         "version": "2.0.5"
+    },
+    "rize/uri-template": {
+        "version": "0.3.2"
     },
     "sensio/framework-extra-bundle": {
         "version": "4.0",

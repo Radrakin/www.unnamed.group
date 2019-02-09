@@ -9,6 +9,8 @@
         "doctrine/mongodb-odm": "^1.2",
         "doctrine/mongodb-odm-bundle": "^3.5",
         "friendsofsymfony/user-bundle": "^2.1",
+        "google/cloud-error-reporting": "^0.12.4",
+        "google/cloud-logging": "^1.14",
         "knpuniversity/oauth2-client-bundle": "^1.27",
         "mongodb/mongodb": "^1.4",
         "paragonie/random_compat": "2.*",

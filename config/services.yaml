@@ -36,4 +36,5 @@ services:
 
     Symfony\Component\HttpFoundation\Session\Storage\Handler\MongoDbSessionHandler:
       arguments:
-        - {database: testDb, collection: sessions}
+        - database: testDb
+        - collection: sessions

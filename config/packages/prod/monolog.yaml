@@ -1,9 +1,0 @@
-monolog:
-    handlers:
-        # this "file_log" key could be anything
-        file_log:
-            type: stream
-            # log to var/log/(environment).log
-            path: "gs://zeue-log-dump/uagpmc-com/%kernel.environment%.log"
-            # log *all* messages (debug is lowest level)
-            level: debug

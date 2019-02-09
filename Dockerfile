@@ -15,9 +15,9 @@ ENV MAILER_URL ${MAILER_URL}
 RUN apk add --update --no-cache libressl-dev util-linux composer zip libpng-dev git mongodb alpine-sdk autoconf && \
         docker-php-ext-install pcntl mysqli pdo gd zip
 
-RUN pecl install mongodb
+RUN pecl install mongodb stackdriver_debugger-alpha
 
-RUN docker-php-ext-enable mongodb
+RUN docker-php-ext-enable mongodb stackdriver_debugger
 
 RUN mkdir uagpmc.com
 

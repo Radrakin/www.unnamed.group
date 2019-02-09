@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0610ea62051ddbb8cc48c5170f60c6b",
+    "content-hash": "1884d7ef8948227c90e9d8982f2ea92d",
     "packages": [
         {
             "name": "alcaeus/mongo-php-adapter",
@@ -1772,6 +1772,53 @@
             "time": "2018-09-17T20:29:21+00:00"
         },
         {
+            "name": "google/cloud-common-protos",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-cloud-php-common-protos.git",
+                "reference": "ae08b4f3ab04ea220eb5366d3410ee03a15350e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-common-protos/zipball/ae08b4f3ab04ea220eb5366d3410ee03a15350e3",
+                "reference": "ae08b4f3ab04ea220eb5366d3410ee03a15350e3",
+                "shasum": ""
+            },
+            "require": {
+                "google/common-protos": "^0.1",
+                "google/protobuf": "^3.6.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.36"
+            },
+            "type": "library",
+            "extra": {
+                "component": {
+                    "id": "cloud-common-protos",
+                    "target": "googleapis/google-cloud-php-common-protos.git",
+                    "path": "CommonProtos",
+                    "entry": "README.md"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Google\\Cloud\\": "src",
+                    "GPBMetadata\\Google\\": "metadata"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Common Protos for Google Cloud APIs",
+            "homepage": "https://github.com/googleapis/google-cloud-php-common-protos",
+            "keywords": [
+                "google"
+            ],
+            "time": "2019-02-06T21:40:58+00:00"
+        },
+        {
             "name": "google/cloud-core",
             "version": "v1.26.0",
             "source": {
@@ -1829,6 +1876,64 @@
                 "Apache-2.0"
             ],
             "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
+            "time": "2019-02-06T21:40:58+00:00"
+        },
+        {
+            "name": "google/cloud-debugger",
+            "version": "v0.16.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-cloud-php-debugger.git",
+                "reference": "fc392a98e959e26045760bb5f328f474b226ca65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-debugger/zipball/fc392a98e959e26045760bb5f328f474b226ca65",
+                "reference": "fc392a98e959e26045760bb5f328f474b226ca65",
+                "shasum": ""
+            },
+            "require": {
+                "google/cloud-common-protos": "^0.1",
+                "google/cloud-core": "^1.26",
+                "google/cloud-logging": "^1.4",
+                "google/gax": "^0.38.0",
+                "psr/log": "^1.0"
+            },
+            "require-dev": {
+                "erusev/parsedown": "^1.6",
+                "google/cloud-tools": "^0.6",
+                "phpdocumentor/reflection": "^3.0",
+                "phpunit/phpunit": "^4.8|^5.0",
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "suggest": {
+                "ext-grpc": "The gRPC extension enables use of the performant gRPC transport",
+                "ext-protobuf": "Provides a significant increase in throughput over the pure PHP protobuf implementation. See https://cloud.google.com/php/grpc for installation instructions.",
+                "ext-stackdriver_debugger": "*"
+            },
+            "bin": [
+                "bin/google-cloud-debugger"
+            ],
+            "type": "library",
+            "extra": {
+                "component": {
+                    "id": "cloud-debugger",
+                    "target": "googleapis/google-cloud-php-debugger.git",
+                    "path": "Debugger",
+                    "entry": "src/DebuggerClient.php"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Google\\Cloud\\Debugger\\": "src",
+                    "GPBMetadata\\Google\\Devtools\\Clouddebugger\\": "metadata"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Stackdriver Debugger Client for PHP",
             "time": "2019-02-06T21:40:58+00:00"
         },
         {
@@ -7977,7 +8082,8 @@
     "prefer-lowest": false,
     "platform": {
         "php": "^7.1.3",
-        "ext-iconv": "*"
+        "ext-iconv": "*",
+        "ext-stackdriver_debugger": "*"
     },
     "platform-dev": [],
     "platform-overrides": {

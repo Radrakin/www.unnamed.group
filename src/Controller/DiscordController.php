@@ -5,11 +5,6 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
-use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use App\Document\DiscordUser;
-use Doctrine\ODM\MongoDB\DocumentManager as DocumentManager;
 
 class DiscordController extends AbstractController
 {
@@ -35,7 +30,7 @@ class DiscordController extends AbstractController
      *
      * @Route("/connect/discord/check", name="connect_discord_check")
      */
-    public function connectCheckAction(Request $request, ClientRegistry $clientRegistry, DocumentManager $dm)
+    public function connectCheckAction()
     {
       return $this->redirectToRoute('home');
     }

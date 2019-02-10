@@ -45,40 +45,46 @@ class DiscordAuthenticator extends SocialAuthenticator
 
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
-        /** @var DiscordUser $discordUser */
-        $discordUser = $this->getDiscordClient()
-            ->fetchUserFromToken($credentials);
+        try {
+            /** @var DiscordUser $discordUser */
+            $discordUser = $this->getDiscordClient()
+                ->fetchUserFromToken($credentials);
 
-        $discordId = $discordUser->getId();
+            $discordId = $discordUser->getId();
 
-        // 1) have they logged in with Discord before? Easy!
-        $existingUser = $this->dm->getRepository(DiscordUser::class)
-            ->findOneBy(['discordId' => $discordUser->getId()]);
-        if ($existingUser) {
-            return $existingUser;
+            // 1) have they logged in with Discord before? Easy!
+            $existingUser = $this->dm->getRepository(DiscordUser::class)
+                ->findOneBy(['discordId' => $discordUser->getId()]);
+            if ($existingUser) {
+                return $existingUser;
+            }
+
+            // 2) do we have a matching user by email?
+            $user = $this->dm->getRepository(DiscordUser::class)
+                        ->findOneBy(['discordId' => $discordId]);
+
+            // 3) Maybe you just want to "register" them by creating
+            // a User object
+            if (!$user) {
+                $user2 = new DiscordUser();
+            } else {
+                $user2 = $user;
+            }
+
+            $user2->setDiscordId($discordUser->getId());
+            $user2->setDiscordUsername($discordUser->getUsername());
+            $user2->setDiscordDiscriminator($discordUser->getDiscriminator());
+            $user2->setDiscordAvatarHash($discordUser->getAvatarHash());
+            $user2->setEnabled(1);
+            $this->dm->persist($user2);
+            $this->dm->flush();
+
+            return $user2;
+        } catch (\Exception $e) {
+            var_dump($e);
         }
 
-        // 2) do we have a matching user by email?
-        $user = $this->dm->getRepository(DiscordUser::class)
-                    ->findOneBy(['discordId' => $discordId]);
 
-        // 3) Maybe you just want to "register" them by creating
-        // a User object
-        if (!$user) {
-            $user2 = new DiscordUser();
-        } else {
-            $user2 = $user;
-        }
-
-        $user2->setDiscordId($discordUser->getId());
-        $user2->setDiscordUsername($discordUser->getUsername());
-        $user2->setDiscordDiscriminator($discordUser->getDiscriminator());
-        $user2->setDiscordAvatarHash($discordUser->getAvatarHash());
-        $user2->setEnabled(1);
-        $this->dm->persist($user2);
-        $this->dm->flush();
-
-        return $user2;
     }
 
     /**

@@ -110,20 +110,8 @@
     "google/auth": {
         "version": "v1.4.0"
     },
-    "google/cloud-common-protos": {
-        "version": "v0.1.1"
-    },
-    "google/cloud-core": {
-        "version": "v1.26.0"
-    },
-    "google/cloud-debugger": {
-        "version": "v0.16.3"
-    },
     "google/cloud-error-reporting": {
         "version": "v0.12.4"
-    },
-    "google/cloud-logging": {
-        "version": "v1.14.4"
     },
     "google/common-protos": {
         "version": "0.1.0"
@@ -211,6 +199,9 @@
     },
     "ralouphie/getallheaders": {
         "version": "2.0.5"
+    },
+    "ramsey/uuid": {
+        "version": "3.8.0"
     },
     "rize/uri-template": {
         "version": "0.3.2"

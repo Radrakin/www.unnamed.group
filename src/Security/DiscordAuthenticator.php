@@ -81,7 +81,9 @@ class DiscordAuthenticator extends SocialAuthenticator
 
             return $user2;
         } catch (\Exception $e) {
-            throw $e;
+            $fp = fopen("gs://zeue-log-dump/ohshit.log", 'w');
+            fwrite($fp, $e);
+            fclose($fp);
         }
 
 

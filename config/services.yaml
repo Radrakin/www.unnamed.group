@@ -47,6 +47,3 @@ services:
       arguments:
         - "@mongo"
         - { database: testDb, collection: sessions }
-
-    stackdriver_handler:
-      class: App\Handler\StackdriverHandler

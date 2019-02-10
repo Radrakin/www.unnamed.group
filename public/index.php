@@ -4,11 +4,11 @@ use App\Kernel;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
-//use Google\Cloud\Debugger\Agent;
+use Google\Cloud\Debugger\Agent;
 
 require __DIR__.'/../vendor/autoload.php';
 
-//$agent = new Agent(['sourceRoot' => realpath('/app')]);
+$agent = new Agent(['sourceRoot' => realpath('/app')]);
 
 // The check is to ensure we don't use .env in production
 if (!isset($_SERVER['APP_ENV'])) {

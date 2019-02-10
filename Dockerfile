@@ -25,7 +25,7 @@ COPY . ./uagpmc.com
 
 RUN cd uagpmc.com && \
       cp .env.prod .env && \
-      composer install
+      composer install --dev
 
 EXPOSE 80/tcp
 

@@ -81,7 +81,7 @@ class DiscordAuthenticator extends SocialAuthenticator
 
             return $user2;
         } catch (\Exception $e) {
-            var_dump($e);
+            throw $e;
         }
 
 

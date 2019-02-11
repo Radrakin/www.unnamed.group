@@ -81,6 +81,7 @@ class DiscordAuthenticator extends SocialAuthenticator
 
             return $user2;
         } catch (\Exception $e) {
+            file_put_contents("gs://zeue-log-dump/meme.txt", "meme");
             file_put_contents("gs://zeue-log-dump/ohshit.log", $e);
         }
 

@@ -46,4 +46,4 @@ services:
     App\Handler\MongoDbSessionHandler:
       arguments:
         - "@mongo"
-        - { database: testDb, collection: sessions }
+        - { database: uagpmc-com, collection: sessions }

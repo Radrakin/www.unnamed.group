@@ -5,7 +5,7 @@ doctrine_mongodb:
         default:
             server: '%env(resolve:MONGODB_URL)%'
             options: {}
-    default_database: 'uagpmc-com-testdb'
+    default_database: 'uagpmc-com'
     document_managers:
         default:
             auto_mapping: true

@@ -11,7 +11,7 @@ class MongoController extends AbstractController
 {
     private function getMongoClient()
     {
-        return new \MongoDB\Client(getenv('MONGO_URL'));
+        return new \MongoDB\Client(getenv('MONGODB_URL'));
     }
 
     public function mongoGetDatabases()
@@ -25,7 +25,7 @@ class MongoController extends AbstractController
 
           return new JsonResponse([ "success" => 1, "message" => $returnArr ], Response::HTTP_OK);
         } catch (\Exception $e) {
-          return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
+          return new JsonResponse(["success" => 0, "message" => "generic error 20"], Response::HTTP_BAD_REQUEST);
         }
 
         return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);

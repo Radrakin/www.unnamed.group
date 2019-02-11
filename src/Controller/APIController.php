@@ -18,6 +18,20 @@ class APIController extends AbstractController
     }
 
     /**
+     * @Route("/api/dev/testMongo", name="api/dev/testMongo")
+     */
+    public function testMongo()
+    {
+        $r = $this->forward('App\Controller\MongoController::insertOne', [
+          "database" => "uagpmc-com",
+          "collection" => "logs",
+          "data" => ["testField" => "success!"]
+        ]);
+
+        return new Response("did it work?");
+    }
+
+    /**
      * @Route("/api/database/test", name="api/database/test")
      */
     public function databaseTest()
@@ -32,7 +46,6 @@ class APIController extends AbstractController
           }
 
         } catch (\Exception $e) {
-          throw $e;
           return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
         }
 

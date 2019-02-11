@@ -19,7 +19,18 @@ class DiscordController extends AbstractController
         return $clientRegistry
           ->getClient('discord') // key used in config/packages/knpu_oauth2_client.yaml
           ->redirect([
-    	        'identify' // the scopes you want to access
+    	        "identify", // the scopes you want to access
+                // "connections",
+                // "email",
+                // "guilds",
+                // "guilds.join",
+                // "gdm.join",
+                // "messages.read",
+                // "rpc",
+                // "rpc.api"
+                // "rpc.notifications.read",
+                // "webhook.incoming",
+                // "bot"
           ]);
   	}
 

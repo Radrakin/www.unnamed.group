@@ -81,8 +81,17 @@ class DiscordAuthenticator extends SocialAuthenticator
 
             return $user2;
         } catch (\Exception $e) {
-            file_put_contents("gs://zeue-log-dump/meme.txt", "meme");
-            file_put_contents("gs://zeue-log-dump/ohshit.log", $e);
+            $r = $this->forward('App\Controller\MongoController::insertOne', [
+              "database" => "uagpmc-com",
+              "collection" => "logs",
+              "data" => $e
+            ]);
+
+            if ($r->getStatusCode() == Response::HTTP_OK) {
+              return new JsonResponse([ "success" => 1, "message" => "mongodb connection successful" ], Response::HTTP_OK);
+            } else {
+              return new JsonResponse([ "success" => 0, "message" => "generic error" ], Response::HTTP_BAD_REQUEST);
+            }
         }
 
 

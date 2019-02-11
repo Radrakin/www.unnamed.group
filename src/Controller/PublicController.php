@@ -47,4 +47,12 @@ class PublicController extends AbstractController
     {
         return $this->render('public/join.html.twig');
     }
+
+    /**
+     * @Route("/discord", name="discord")
+     */
+    public function discord()
+    {
+        return $this->redirect('https://discord.gg/eNkDNRh');
+    }
 }

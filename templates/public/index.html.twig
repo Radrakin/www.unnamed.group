@@ -5,8 +5,10 @@
 	<div id="site-wrap" class="row">
 		<div id="box1" class="card mx-auto my-auto rounded-0">
 			{% if app.user %}
-				<img src="https://cdn.discordapp.com/avatars/{{ DiscordId }}/{{ DiscordAvatarHash }}" style="width: 10em; margin: auto;">
-				<br>
+				{% if DiscordAvatarHash %}
+					<img src="https://cdn.discordapp.com/avatars/{{ DiscordId }}/{{ DiscordAvatarHash }}" style="width: 10em; margin: auto;">
+					<br>
+				{% endif %}
 				<h1>
 					Welcome back, {{ DiscordUsername }}!
 				</h1>

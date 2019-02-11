@@ -31,4 +31,20 @@ class PublicController extends AbstractController
     {
         return $this->render('public/about.html.twig');
     }
+
+    /**
+     * @Route("/media", name="media")
+     */
+    public function media()
+    {
+        return $this->render('public/media.html.twig');
+    }
+
+    /**
+     * @Route("/join", name="join")
+     */
+    public function join()
+    {
+        return $this->render('public/join.html.twig');
+    }
 }

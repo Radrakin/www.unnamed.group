@@ -14,8 +14,8 @@
 				<span>UAGPMC</span>
 			</a>
 			<a class="nav-link" href="{{ path("about") }}">About</a>
-			<a class="nav-link joinLink disabled" href="javascript:void()">Media</a>
-			<a class="nav-link joinLink disabled" href="javascript:void()">Join</a>
+			<a class="nav-link" href="{{ path("media") }}">Media</a>
+			<a class="nav-link" href="{{ path("join") }}">Join</a>
 			<div id="navbarRight">
 				{% if app.user %}
 					 <a class="nav-link" href="/logout" style="background-color: red !important;">Logout</a>

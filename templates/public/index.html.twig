@@ -1,4 +1,4 @@
-{% extends 'base-public.html.twig' %}
+{% extends 'public/base.html.twig' %}
 
 {% block body %}
 <div class="container">
@@ -10,6 +10,16 @@
 				<h1>
 					Welcome back, {{ DiscordUsername }}!
 				</h1>
+				<br>
+				<div class="row">
+					<div class="col"></div>
+						<a id="secnetButton" type="button" class="btn btn-primary col" href="{{ path("secnet") }}">
+							<span>
+								Enter SecNet
+							</span>
+						</a>
+					<div class="col"></div>
+				</div>
 			{% else %}
 				<h1>
 				 Unnamed Arma Group
@@ -18,14 +28,13 @@
 				 "No Bullshit" <u>MILSIM</u>
 				</h3>
 			{% endif %}
-			<br>
-			<div class="row">
-			<div class="col"></div>
-				<button id="discordButton" type="button" class="btn btn-primary col" onClick="discordClicked()">
-					<img src="https://discordapp.com/assets/192cb9459cbc0f9e73e2591b700f1857.svg" />
-				</button>
-			<div class="col"></div>
-			</div>
+			<!-- <div class="row">
+				<div class="col"></div>
+					<button id="discordButton" type="button" class="btn btn-primary col" onClick="discordClicked()">
+						<img src="https://discordapp.com/assets/192cb9459cbc0f9e73e2591b700f1857.svg" />
+					</button>
+				<div class="col"></div>
+			</div> -->
 		</div>
 	</div>
 </div>

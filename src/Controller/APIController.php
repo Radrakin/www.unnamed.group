@@ -18,20 +18,6 @@ class APIController extends AbstractController
     }
 
     /**
-     * @Route("/api/dev/testMongo", name="api/dev/testMongo")
-     */
-    public function testMongo()
-    {
-        $r = $this->forward('App\Controller\MongoController::insertOne', [
-          "database" => "uagpmc-com",
-          "collection" => "logs",
-          "data" => ["testField" => "success!"]
-        ]);
-
-        return new Response("did it work?");
-    }
-
-    /**
      * @Route("/api/database/test", name="api/database/test")
      */
     public function databaseTest()

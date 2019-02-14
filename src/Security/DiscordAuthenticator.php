@@ -60,12 +60,11 @@ class DiscordAuthenticator extends SocialAuthenticator
                 return $existingUser;
             }
 
-            // 2) do we have a matching user by email?
+            // 2) do we have a matching user by discordId?
             $user = $this->dm->getRepository(DiscordUser::class)
                         ->findOneBy(['discordId' => $discordId]);
 
-            // 3) Maybe you just want to "register" them by creating
-            // a User object
+            // 3) Maybe you just want to "register" them by creating a User object
             if (!$user) {
                 $user2 = new DiscordUser();
             } else {

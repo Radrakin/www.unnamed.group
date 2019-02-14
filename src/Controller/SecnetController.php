@@ -12,7 +12,10 @@ class SecnetController extends AbstractController
      */
     public function index()
     {
-        echo "you have no power here XD";
-        die;
+        if ($this->getUser()) {
+            return $this->render('secnet/index.html.twig');
+        } else {
+            return $this->redirectToRoute('home');
+        }
     }
 }

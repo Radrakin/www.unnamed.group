@@ -37,7 +37,21 @@ class PublicController extends AbstractController
      */
     public function media()
     {
-        return $this->render('public/media.html.twig');
+        $galleryImages = array_diff(scandir("../public/assets/img/gallery"), array('..', '.'));
+        
+        shuffle($galleryImages);
+
+        return $this->render('public/media.html.twig', [
+            "youtubeVideos" => [
+                "L6-uUQIm1sM",
+                "nJ3B3kTtGaY",
+                "7yt6PE3IoDo",
+                "cyMVGzkk_dM",
+                "kJMaQjsElb8",
+                "mJD6T3yR3D8"
+            ],
+            "galleryImages" => $galleryImages
+        ]);
     }
 
     /**

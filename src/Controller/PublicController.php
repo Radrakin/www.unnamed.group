@@ -5,6 +5,8 @@ namespace App\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use RestCord\DiscordClient as RestCord;
+use Google\Cloud\Storage\StorageClient;
+use Symfony\Component\HttpFoundation\Response;
 
 class PublicController extends AbstractController
 {
@@ -37,8 +39,13 @@ class PublicController extends AbstractController
      */
     public function media()
     {
-        $galleryImages = array_diff(scandir("../public/assets/img/gallery"), array('..', '.'));
-        
+        $storage = new StorageClient([
+            'projectId' => 'zeue-net'
+        ]);
+        $storage->registerStreamWrapper();
+
+        $galleryImages = array_diff(scandir("gs://files.uag.zeue.net/gallery"), array('gallery/'));
+
         shuffle($galleryImages);
 
         return $this->render('public/media.html.twig', [
@@ -52,6 +59,14 @@ class PublicController extends AbstractController
             ],
             "galleryImages" => $galleryImages
         ]);
+    }
+
+    /**
+     * @Route("/files", name="files")
+     */
+    public function files()
+    {
+        return $this->render('public/files.html.twig');
     }
 
     /**

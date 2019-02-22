@@ -50,12 +50,12 @@ class PublicController extends AbstractController
 
         return $this->render('public/media.html.twig', [
             "youtubeVideos" => [
+                "Wm4ocicYda0",
                 "L6-uUQIm1sM",
                 "nJ3B3kTtGaY",
                 "7yt6PE3IoDo",
                 "cyMVGzkk_dM",
-                "kJMaQjsElb8",
-                "mJD6T3yR3D8"
+                "kJMaQjsElb8"
             ],
             "galleryImages" => $galleryImages
         ]);

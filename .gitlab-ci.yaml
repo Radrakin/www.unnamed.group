@@ -20,11 +20,9 @@ upload:
   image: google/cloud-sdk
   stage: update_google_mirror
   script:
-    - echo "$googKey" > key.json
-    - sleep 2
-    - gcloud auth activate-service-account --key-file key.json
-    - git config --global credential.'https://source.developers.google.com'.helper gcloud.sh
-    - git remote add google https://source.developers.google.com/p/pn-sharedhosting/r/uagpmc-com
-    - git push google --tags
+    - echo "$GITLAB_GOOGLE_SERVICE_ACCOUNT" > key.json && sleep 2 && gcloud auth activate-service-account --key-file key.json
+    - gcloud builds submit --tag=gcr.io/zeue-net/tests/www-uag-zeue-net:latest
+    - gsutil cp gs://zeue-net-secrets/app-engine-configs/www.uag.zeue.net/app.yaml .
+    - gcloud app deploy ./app.yaml --image-url=gcr.io/zeue-net/tests/www-uag-zeue-net:latest --version=${CI_COMMIT_TAG//./-} --quiet
   only:
     - tags

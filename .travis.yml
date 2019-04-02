@@ -15,7 +15,7 @@ before_install:
 - source $HOME/google-cloud-sdk/path.bash.inc
 - gcloud components update
 - gcloud version
-- openssl aes-256-cbc -K $encrypted_2062483a32c6_key -iv $encrypted_2062483a32c6_iv -in google_cred_zeue-net.json.enc -out ~\/google_cred_zeue-net.json -d
+- openssl aes-256-cbc -K $encrypted_2062483a32c6_key -iv $encrypted_2062483a32c6_iv -in google_cred_zeue-net.json.enc -out google_cred_zeue-net.json -d
 install: true
 script:
 - gcloud auth activate-service-account --key-file ~/google_cred_zeue-net.json

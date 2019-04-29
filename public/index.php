@@ -10,6 +10,10 @@ require __DIR__.'/../vendor/autoload.php';
 
 //$agent = new Agent(['sourceRoot' => realpath('/app')]);
 
+if($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') { 
+  $_SERVER['HTTPS'] = 'on';
+}
+
 // The check is to ensure we don't use .env in production
 if (!isset($_SERVER['APP_ENV'])) {
     if (!class_exists(Dotenv::class)) {

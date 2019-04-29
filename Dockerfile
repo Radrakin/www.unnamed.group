@@ -30,4 +30,4 @@ RUN cd uagpmc.com && \
 EXPOSE 80/tcp
 EXPOSE 443/tcp
 
-CMD php uagpmc.com/bin/console server:run *:443
+CMD php uagpmc.com/bin/console server:run *:80

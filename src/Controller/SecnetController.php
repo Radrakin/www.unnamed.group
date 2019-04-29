@@ -19,13 +19,32 @@ class SecnetController extends AbstractController
     }
 
     /**
-     * @Route("/secnet", name="secnet")
+     * @Route("/secnet", name="secnet/home")
      */
     public function index()
     {
         if ($this->getUser()) {
             return $this->render('secnet/index.html.twig', [
                 "userData" => $this->parseUserData()
+            ]);
+        } else {
+            return $this->redirectToRoute('home');
+        }
+    }
+
+    /**
+     * @Route("/secnet/stats", name="secnet/stats")
+     */
+    public function stats()
+    {
+        if ($this->getUser()) {
+            return $this->render('secnet/stats.html.twig', [
+                "statsBundle" => [
+                  "id" => $this->getUser()->getDiscordId(),
+                  "name" => $this->getUser()->getDiscordUsername(),
+                  "avatarUrl" => "https://cdn.discordapp.com/avatars/" . $this->getUser()->getDiscordId() . "/" . $this->getUser()->getDiscordAvatarHash(),
+                  "goodBoyPoints" => $this->forward('App\Controller\APIController::getUserGoodBoyPoints')->getContent()
+                ]
             ]);
         } else {
             return $this->redirectToRoute('home');

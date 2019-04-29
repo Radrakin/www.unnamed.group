@@ -11,7 +11,7 @@ class MongoController extends AbstractController
 {
     private function getMongoClient()
     {
-        return new \MongoDB\Client(getenv('MONGODB_URL'));
+        return new \MongoDB\Client($_SERVER['MONGODB_URL']);
     }
 
     public function mongoGetDatabases()
@@ -54,11 +54,37 @@ class MongoController extends AbstractController
         if ($database && $collection && $findCriteria) {
             $cursor = ($this->getMongoClient())->$database->$collection->find($findCriteria);
 
+            $returnArr = [];
+
             foreach ($cursor as $_x) {
                 $returnArr[] = (array)$_x;
             }
 
             return new JsonResponse(["success" => "1", "message" => $returnArr], Response::HTTP_OK);
+        } else {
+            return new JsonResponse(["success" => 0, "message" => "missing parameters"], Response::HTTP_BAD_REQUEST);
+        }
+
+        return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
+    }
+
+    public function sumCommonFields($database = null, $collection = null, $findCriteria = null, $sumTarget = null)
+    {
+      $database = "uagpmc-com";
+      $collection = "goodBoyPoints";
+      $findCriteria = ["discordId" => $this->getUser()->getDiscordId()];
+      $sumTarget = "goodBoyPoints";
+
+        if ($database && $collection && $findCriteria && $sumTarget) {
+            $cursor = ($this->getMongoClient())->$database->$collection->find($findCriteria);
+
+            $returnSum = 0;
+
+            foreach ($cursor as $_x) {
+                $returnSum = $returnSum + $_x->goodBoyPoints;
+            }
+
+            return new JsonResponse(["success" => "1", "message" => $returnSum], Response::HTTP_OK);
         } else {
             return new JsonResponse(["success" => 0, "message" => "missing parameters"], Response::HTTP_BAD_REQUEST);
         }

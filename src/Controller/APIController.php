@@ -38,4 +38,24 @@ class APIController extends AbstractController
 
         return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
     }
+
+    /**
+     * @Route("/api/user/gbp", name="api/user/gbp")
+     */
+    public function getUserGoodBoyPoints()
+    {
+        if (!$this->getUser()) {
+          return new JsonResponse(["success" => 0, "message" => "you are not a user"], Response::HTTP_BAD_REQUEST);
+        } else {
+          try {
+            $mongoResponse = $this->forward('App\Controller\MongoController::sumCommonFields', ["database" => "uagpmc-com", "collection" => "goodBoyPoints", "findCriteria" => ["discordId" => $this->getUser()->getDiscordId()], "sumTarget" => "goodBoyPoints"]);
+
+            return new JsonResponse(json_decode($mongoResponse->getContent(), true)["message"], Response::HTTP_OK);
+          } catch (\Exception $e) {
+            return new JsonResponse([ "success" => 0, "message" => "mongo said no" ], Response::HTTP_BAD_REQUEST);
+          }
+        }
+
+        return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
+    }
 }

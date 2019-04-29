@@ -42,6 +42,11 @@ class DiscordUser extends BaseUser
      */
     protected $discordAvatarHash;
 
+    /**
+     * @MongoDB\Field(type="collection")
+     */
+    protected $discordRoles;
+
     public function getId(): ?string
     {
         return $this->id;
@@ -91,6 +96,18 @@ class DiscordUser extends BaseUser
     public function setDiscordAvatarHash($discordAvatarHash): self
     {
         $this->discordAvatarHash = $discordAvatarHash;
+
+        return $this;
+    }
+
+    public function getDiscordRoles(): ?arr
+    {
+        return $this->discordRoles;
+    }
+
+    public function setDiscordRoles($discordRoles): self
+    {
+        $this->discordRoles = $discordRoles;
 
         return $this;
     }

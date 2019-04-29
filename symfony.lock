@@ -110,6 +110,9 @@
     "google/auth": {
         "version": "v1.4.0"
     },
+    "google/cloud": {
+        "version": "v0.93.0"
+    },
     "google/cloud-common-protos": {
         "version": "v0.1.1"
     },
@@ -220,6 +223,9 @@
     },
     "ralouphie/getallheaders": {
         "version": "2.0.5"
+    },
+    "ramsey/uuid": {
+        "version": "3.8.0"
     },
     "restcord/restcord": {
         "version": "0.3.1"
@@ -394,6 +400,9 @@
     },
     "symfony/polyfill-intl-icu": {
         "version": "v1.8.0"
+    },
+    "symfony/polyfill-intl-idn": {
+        "version": "v1.11.0"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.8.0"

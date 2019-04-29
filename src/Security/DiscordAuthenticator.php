@@ -51,24 +51,12 @@ class DiscordAuthenticator extends SocialAuthenticator
             $discordUser = $this->getDiscordClient()
                 ->fetchUserFromToken($credentials);
 
-            $discordId = $discordUser->getId();
+            $restCord = new RestCord(['token' => $_SERVER['DISCORD_BOT_SECRET']]);
 
-            // 1) have they logged in with Discord before? Easy!
-            $existingUser = $this->dm->getRepository(DiscordUser::class)
-                ->findOneBy(['discordId' => $discordUser->getId()]);
-            if ($existingUser) {
-                return $existingUser;
-            }
-
-            // 2) do we have a matching user by discordId?
-            $user = $this->dm->getRepository(DiscordUser::class)
-                        ->findOneBy(['discordId' => $discordId]);
-
-            // 3) Maybe you just want to "register" them by creating a User object
-            if (!$user) {
-                $user2 = new DiscordUser();
-            } else {
-                $user2 = $user;
+            try {
+              $user2 = $this->dm->getRepository(DiscordUser::class)->findOneBy(['discordId' => $discordUser->getId()]);;
+            } catch (\Exception $e) {
+              $user2 = new DiscordUser();
             }
 
             $user2->setDiscordId($discordUser->getId());
@@ -76,6 +64,7 @@ class DiscordAuthenticator extends SocialAuthenticator
             $user2->setDiscordDiscriminator($discordUser->getDiscriminator());
             $user2->setDiscordAvatarHash($discordUser->getAvatarHash());
             $user2->setEnabled(1);
+            $user2->setRoles($restCord->guild->getGuildMember(['guild.id' => (int)$_SERVER['DISCORD_UAGPMC_GUILD_ID'], 'user.id' => (int)$discordUser->getId()])->roles);
             $this->dm->persist($user2);
             $this->dm->flush();
 

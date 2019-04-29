@@ -1,0 +1,27 @@
+{% extends 'secnet/base.html.twig' %}
+
+{% block body %}
+
+{% for key, item in statsBundle %}
+<b>{{key}}:</b>
+<br>
+<span class="item">{{item}}</span>
+<br><br>
+{% endfor %}
+
+<script src="https://code.jquery.com/jquery-3.4.0.slim.min.js" integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  jQuery.fn.autolink = function () {
+    return this.each(function () {
+      var re = /(^|\s)(((([^:\/?#\s]+):)?\/\/)?(([A-Za-z0-9-]+\.)+[A-Za-z0-9-]+)(:\d+)?([^?#\s]*)(\?([^#\s]*))?(#(\S*))?)/g;
+      $(this).html($(this).html().replace(re, function (match, optionalWhitespace, uri, scheme, p4, protocol, fqdn, p7, port, path, query, queryVal, fragment, fragId) {
+        return (optionalWhitespace ? optionalWhitespace : '') + '<a href="' + (protocol ? uri : 'http://' + uri) + '" target="_blank">' + uri + '<\/a>';
+      }));
+    });
+  };
+
+  $(".item").autolink();
+</script>
+
+{% endblock %}

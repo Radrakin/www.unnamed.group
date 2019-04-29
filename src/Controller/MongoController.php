@@ -70,11 +70,6 @@ class MongoController extends AbstractController
 
     public function sumCommonFields($database = null, $collection = null, $findCriteria = null, $sumTarget = null)
     {
-      $database = "uagpmc-com";
-      $collection = "goodBoyPoints";
-      $findCriteria = ["discordId" => $this->getUser()->getDiscordId()];
-      $sumTarget = "goodBoyPoints";
-
         if ($database && $collection && $findCriteria && $sumTarget) {
             $cursor = ($this->getMongoClient())->$database->$collection->find($findCriteria);
 

@@ -28,5 +28,6 @@ RUN cd uagpmc.com && \
       composer install
 
 EXPOSE 80/tcp
+EXPOSE 443/tcp
 
-CMD php uagpmc.com/bin/console server:run *:80
+CMD php uagpmc.com/bin/console server:run *:443

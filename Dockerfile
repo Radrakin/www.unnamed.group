@@ -1,4 +1,4 @@
-FROM php:7.2-alpine
+FROM php:7.2-apache
 
 ARG MONGODB_URL
 ENV MONGODB_URL ${MONGODB_URL}
@@ -12,22 +12,31 @@ ENV OAUTH_DISCORD_CLIENT_SECRET ${OAUTH_DISCORD_CLIENT_SECRET}
 ARG MAILER_URL
 ENV MAILER_URL ${MAILER_URL}
 
-RUN apk add --update --no-cache libressl-dev util-linux composer zip libpng-dev git mongodb alpine-sdk autoconf && \
-        docker-php-ext-install pcntl mysqli pdo gd zip
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+    php -r "if (hash_file('sha384', 'composer-setup.php') === '48e3236262b34d30969dca3c37281b3b4bbe3221bda826ac6a9a62d6444cdb0dcd0615698a5cbe587c3f0fe57a54d8f5') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
+    php composer-setup.php && \
+    php -r "unlink('composer-setup.php');"
 
-RUN pecl install mongodb stackdriver_debugger-alpha
+RUN apt update && apt install util-linux zip libpng-dev git mongodb autoconf libssl-dev -y && \
+    docker-php-ext-install pcntl mysqli pdo gd zip
 
-RUN docker-php-ext-enable mongodb stackdriver_debugger
+RUN pecl install mongodb
 
-RUN mkdir uagpmc.com
+RUN docker-php-ext-enable mongodb
 
-COPY . ./uagpmc.com
+COPY . /var/www/html/
 
-RUN cd uagpmc.com && \
-      cp .env.prod .env && \
-      composer install
+RUN cd /var/www/html/ && \
+    cp .env.prod .env && \
+    ./composer.phar install
+
+RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/!/var/www/html/public!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+RUN chown -R www-data:www-data /var/www
+
+RUN a2enmod rewrite
 
 EXPOSE 80/tcp
 EXPOSE 443/tcp
 
-CMD php uagpmc.com/bin/console server:run *:80
+CMD apachectl -D FOREGROUND

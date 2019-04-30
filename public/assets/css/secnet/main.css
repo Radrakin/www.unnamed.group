@@ -1,0 +1,9 @@
+/* main.css for secnet pages */
+
+#bodyWrapper {
+    margin-top: 4em;
+}
+
+.navLink {
+    font-weight: bold;
+}

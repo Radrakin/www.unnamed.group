@@ -2,8 +2,13 @@
 
 {% block body %}
 
-<pre>Hello {{ userData.Discord.Username }}, welcome to SecNet!
-
-There's nothing here yet, unfortunately, maybe come back later?</pre>
+<div class="row">
+    <div class="col">
+        <div class="card-panel yellow black-text">
+            <p>Hello <b>{{ userData.Discord.Username }}</b>, welcome to SecNet!</p>
+            <p>This is your dashboard, which is still being worked on.</p>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

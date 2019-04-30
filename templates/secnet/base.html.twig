@@ -2,17 +2,31 @@
 
 {% block global_head %}
 	<title>SecNet</title>
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/GitHub/www/public/assets/css/secnet/main.css">
 {% endblock %}
 
 {% block global_body %}
 
 	<nav>
-		<a href="{{ path("secnet/home") }}">Home</a>
-		|
-		<a href="{{ path("secnet/stats") }}">Stats</a>
-		<hr>
+		<div class="nav-wrapper grey">
+			<ul class="left hide-on-med-and-down">
+				<li><a class="btn-floating waves-effect waves-light red navLink" href="{{ path("home") }}"><i class="material-icons">arrow_back</i></a></li>
+				<li class="{{ app.request.get('_route') == 'secnet/home' ? 'active' }}"><a class="navLink" href="{{ path("secnet/home") }}">HOME</a></li>
+				<li class="{{ app.request.get('_route') == 'secnet/stats' ? 'active' }}"><a class="navLink" href="{{ path("secnet/stats") }}">STATS</a></li>
+			</ul>
+			<ul class="right hide-on-med-and-down">
+				<li><a class="waves-effect waves-light btn red navLink" href="/logout">LOGOUT</a></li>
+			</ul>
+		</div>
 	</nav>
 
-	{% block body %}{% endblock %}
+	<div id="bodyWrapper" class="container">
+		{% block body %}{% endblock %}
+	</div>
 
 {% endblock %}

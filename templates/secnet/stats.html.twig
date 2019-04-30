@@ -2,12 +2,18 @@
 
 {% block body %}
 
-{% for key, item in statsBundle %}
-<b>{{key}}:</b>
-<br>
-<span class="item">{{item}}</span>
-<br><br>
-{% endfor %}
+<div class="row">
+    <div class="col">
+        <div class="card-panel white black-text">
+            {% for key, item in statsBundle %}
+              <b>{{key}}:</b>
+              <br>
+              <span class="item">{{item}}</span>
+              <br><br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.4.0.slim.min.js" integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
 

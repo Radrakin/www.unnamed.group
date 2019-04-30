@@ -38,7 +38,7 @@ RUN sed -ri -e 's!ErrorLog!#ErrorLog!g' /etc/apache2/apache2.conf /etc/apache2/c
 RUN sed -ri -e 's!CustomLog!#CustomLog!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 RUN chown -R www-data:www-data /var/www
 
-RUN a2enmod rewrite
+RUN a2enmod rewrite && a2ensite default-ssl
 
 EXPOSE 80/tcp
 EXPOSE 443/tcp

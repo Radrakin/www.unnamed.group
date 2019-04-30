@@ -37,6 +37,7 @@ RUN sed -ri -e 's!CustomLog!#CustomLog!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!ErrorLog!#ErrorLog!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 RUN sed -ri -e 's!CustomLog!#CustomLog!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 RUN sed -ri -e 's!#ErrorLog \$\{APACHE_LOG_DIR\}/error.log!ErrorLog /dev/null!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
 
 RUN chown -R www-data:www-data /var/www
 

@@ -53,11 +53,11 @@ class DiscordAuthenticator extends SocialAuthenticator
 
             $restCord = new RestCord(['token' => getenv('DISCORD_BOT_SECRET')]);
 
-            try {
-              $user2 = $this->dm->getRepository(DiscordUser::class)->findOneBy(['discordId' => $discordUser->getId()]);;
-            } catch (\Exception $e) {
-              $user2 = new DiscordUser();
-            }
+	    $user2 = $this->dm->getRepository(DiscordUser::class)->findOneBy(['discordId' => $discordUser->getId()]);
+		
+	    if (!$user2) {
+	      $user2 = new DiscordUser();
+	    }
 
             $user2->setDiscordId($discordUser->getId());
             $user2->setDiscordUsername($discordUser->getUsername());

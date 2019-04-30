@@ -11,7 +11,7 @@ class MongoController extends AbstractController
 {
     private function getMongoClient()
     {
-        return new \MongoDB\Client($_SERVER['MONGODB_URL']);
+        return new \MongoDB\Client(getenv('MONGODB_URL'));
     }
 
     public function mongoGetDatabases()

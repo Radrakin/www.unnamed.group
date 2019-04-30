@@ -51,7 +51,7 @@ class DiscordAuthenticator extends SocialAuthenticator
             $discordUser = $this->getDiscordClient()
                 ->fetchUserFromToken($credentials);
 
-            $restCord = new RestCord(['token' => $_SERVER['DISCORD_BOT_SECRET']]);
+            $restCord = new RestCord(['token' => getenv('DISCORD_BOT_SECRET')]);
 
             try {
               $user2 = $this->dm->getRepository(DiscordUser::class)->findOneBy(['discordId' => $discordUser->getId()]);;
@@ -64,7 +64,7 @@ class DiscordAuthenticator extends SocialAuthenticator
             $user2->setDiscordDiscriminator($discordUser->getDiscriminator());
             $user2->setDiscordAvatarHash($discordUser->getAvatarHash());
             $user2->setEnabled(1);
-            $user2->setRoles($restCord->guild->getGuildMember(['guild.id' => (int)$_SERVER['DISCORD_UAGPMC_GUILD_ID'], 'user.id' => (int)$discordUser->getId()])->roles);
+            $user2->setRoles($restCord->guild->getGuildMember(['guild.id' => (int)getenv('DISCORD_UAGPMC_GUILD_ID'), 'user.id' => (int)$discordUser->getId()])->roles);
             $this->dm->persist($user2);
             $this->dm->flush();
 

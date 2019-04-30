@@ -32,6 +32,10 @@ RUN cd /var/www/html/ && \
 
 RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/!/var/www/html/public!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+RUN sed -ri -e 's!ErrorLog!#ErrorLog!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!CustomLog!#CustomLog!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!ErrorLog!#ErrorLog!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+RUN sed -ri -e 's!CustomLog!#CustomLog!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 RUN chown -R www-data:www-data /var/www
 
 RUN a2enmod rewrite

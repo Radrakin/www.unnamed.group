@@ -7,13 +7,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SecnetController extends AbstractController
 {
-    private function parseUserData()
+    private function secnetCommonData()
     {
         return [
-            "Discord" => [
-                "Username" => $this->getUser()->getDiscordUsername(),
-                "Id" => $this->getUser()->getDiscordId(),
-                "AvatarHash" => $this->getUser()->getDiscordAvatarHash()
+            "discord" => [
+                "username" => $this->getUser()->getDiscordUsername(),
+                "id" => $this->getUser()->getDiscordId(),
+                "avatarHash" => $this->getUser()->getDiscordAvatarHash(),
+                "avatarUrl" => "https://cdn.discordapp.com/avatars/" . $this->getUser()->getDiscordId() . "/" . $this->getUser()->getDiscordAvatarHash(),
             ]
         ];
     }
@@ -25,7 +26,7 @@ class SecnetController extends AbstractController
     {
         if ($this->getUser()) {
             return $this->render('secnet/index.html.twig', [
-                "userData" => $this->parseUserData()
+                "secnetCommonData" => $this->secnetCommonData()
             ]);
         } else {
             return $this->redirectToRoute('home');
@@ -39,6 +40,7 @@ class SecnetController extends AbstractController
     {
         if ($this->getUser()) {
             return $this->render('secnet/stats.html.twig', [
+                "secnetCommonData" => $this->secnetCommonData(),
                 "statsBundle" => [
                   "id" => $this->getUser()->getDiscordId(),
                   "name" => $this->getUser()->getDiscordUsername(),

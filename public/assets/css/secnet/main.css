@@ -1,9 +1,31 @@
 /* main.css for secnet pages */
 
+body {
+  background-image: url("/assets/img/bgTexture.png");
+  background-repeat: repeat;
+}
+
 #bodyWrapper {
     margin-top: 4em;
 }
 
 .navLink {
     font-weight: bold;
+}
+
+nav ul.right {
+  margin-right: 50px;
+}
+
+nav .brand-logo {
+  height: 100%;
+}
+
+nav .brand-logo img {
+  height: 100%;
+  padding: 5px;
+}
+
+nav .brand-logo.right {
+  right: 0;
 }

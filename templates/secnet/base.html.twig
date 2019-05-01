@@ -22,11 +22,16 @@
 			<ul class="right hide-on-med-and-down">
 				<li><a class="waves-effect waves-light btn red navLink" href="/logout">LOGOUT</a></li>
 			</ul>
+			<a href="javascript:null" class="brand-logo right tooltipped" data-position="bottom" data-tooltip="{{secnetCommonData.discord.username}}"><img src="{{secnetCommonData.discord.avatarUrl}}"/></a>
 		</div>
 	</nav>
 
 	<div id="bodyWrapper" class="container">
 		{% block body %}{% endblock %}
 	</div>
+
+	<script type="text/javascript">
+		M.AutoInit();
+	</script>
 
 {% endblock %}

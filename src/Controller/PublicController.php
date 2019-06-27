@@ -44,7 +44,7 @@ class PublicController extends AbstractController
         ]);
         $storage->registerStreamWrapper();
 
-        $galleryImages = array_diff(scandir("gs://files.uag.zeue.net/images/gallery"), array('images/gallery/'));
+        $galleryImages = array_diff(scandir("gs://files.unnamed.group/images/gallery"), array('images/gallery/'));
 
         shuffle($galleryImages);
 

@@ -12,6 +12,9 @@ ENV OAUTH_DISCORD_CLIENT_SECRET ${OAUTH_DISCORD_CLIENT_SECRET}
 ARG MAILER_URL
 ENV MAILER_URL ${MAILER_URL}
 
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.6/main' >> /etc/apk/repositories
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.6/community' >> /etc/apk/repositories
+
 RUN apk add --update --no-cache libressl-dev util-linux composer zip libpng-dev git mongodb alpine-sdk autoconf && \
         docker-php-ext-install pcntl mysqli pdo gd zip
 

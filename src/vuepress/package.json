@@ -1,0 +1,22 @@
+{
+  "name": "handbook",
+  "version": "1.0.0",
+  "description": "A handy tome for the scholarly contractor",
+  "main": "index.js",
+  "author": "Cody",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "postinstall": "patch-package"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "patch-package": "^5.1.1",
+    "postinstall-postinstall": "^1.0.0",
+    "vuepress": "^1.0.0-alpha.24"
+  }
+}

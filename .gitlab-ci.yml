@@ -8,7 +8,7 @@ deploy_to_dev:
     - echo "$GOOGLE_KEYFILE_B64" | base64 -d > /tmp/gcloud.json
     - gcloud auth activate-service-account --key-file "/tmp/gcloud.json"
     - gcloud builds submit --project=zeue-personal
-    - gcloud beta container clusters get-credentials hermes --region europe-west2-a --project zeue-personal
+    - gcloud beta container clusters get-credentials regret --region europe-west2-a --project zeue-personal
     - kubectl patch deployment www-unnamed-group --namespace shared-webhost -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
   only:
     - branches

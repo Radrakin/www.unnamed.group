@@ -2,7 +2,7 @@ stages:
   - deploy_to_gke
    
 deploy_to_dev:
-  stage: deploy_to_dev
+  stage: deploy_to_gke
   image: google/cloud-sdk:latest
   script:
     - echo "$GOOGLE_KEYFILE_B64" | base64 -d > /tmp/gcloud.json

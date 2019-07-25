@@ -7,7 +7,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/${PROJECT_ID}/github.com/${_GITHUB_REPO_SLUG}:latest']
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['set', 'env', 'deployment/${_DEPLOYMENT_NAME}', '--env', 'COMMIT_SHA=${COMMIT_SHA}']
+  args: ['set', 'env', 'deployment/${_DEPLOYMENT_NAME}', '--env', 'COMMIT_SHA=${COMMIT_SHA}', '--namespace', 'shared-webhost']
   env:
   - 'CLOUDSDK_COMPUTE_REGION=europe-west2-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=regret'

@@ -1,13 +1,16 @@
 stages:
-- update_app
-
-update_app:
-  image: google/cloud-sdk
-  stage: update_app
+  - deploy_to_gke
+   
+deploy_to_dev:
+  stage: deploy_to_dev
+  image: google/cloud-sdk:latest
   script:
-    - echo "$GITLAB_GOOGLE_SERVICE_ACCOUNT" > key.json && sleep 2 && gcloud auth activate-service-account --key-file key.json
-    - gcloud builds submit --tag=gcr.io/zeue-net/tests/www-uag-zeue-net:latest --project=zeue-net
-    - gsutil cp gs://zeue-net-secrets/app-engine-configs/www.uag.zeue.net/app.yaml .
-    - gcloud app deploy ./app.yaml --image-url=gcr.io/zeue-net/tests/www-uag-zeue-net:latest --version=${CI_COMMIT_TAG//./-} --quiet --project=zeue-net
+    - echo "$GOOGLE_KEYFILE_B64" | base64 -d > /tmp/gcloud.json
+    - gcloud auth activate-service-account --key-file "/tmp/gcloud.json"
+    - gcloud builds submit --project=zeue-personal
+    - gcloud beta container clusters get-credentials hermes --region europe-west2-a --project zeue-personal
+    - kubectl patch deployment www-unnamed-group --namespace shared-webhost -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
   only:
-    - tags
+    - branches
+    - master
+    - pushes

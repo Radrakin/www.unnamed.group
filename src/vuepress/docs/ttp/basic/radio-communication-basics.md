@@ -19,8 +19,8 @@ The goal is to allow you to get a quick understanding of what we expect regardin
 | Wolfpack | Base-of-Fire Team | <u>Fireteam Leader</u><br/>1. 343: Block 2 - Channel 2<br/>2. 152: Channel 2<br/><u>Everyone Else</u><br/>1. 343: Block 2 - Channel 2 |
 | Wolfpack | Assault Team Alpha | <u>Fireteam Leader</u><br/>1. 343: Block 2 - Channel 3<br/>2. 152: Channel 2<br/><u>Everyone Else</u><br/>1. 343: Block 2 - Channel 3 |
 | Wolfpack | Assault Team Bravo | <u>Fireteam Leader</u><br/>1. 343: Block 2 - Channel 4<br/>2. 152: Channel 2<br/><u>Everyone Else</u><br/>1. 343: Block 2 - Channel 4 |
-| Hammer | Hand Mortar Battery | <u>Fire-Data Controller</u><br/>1. 343: Block 8 - Channel 1<br/>2. 152: Channel 8<br/><u>Everyone Else</u><br/>1. 343: Block 8 - Channel 1 |
-| Arrow | All Elements | <u>Everyone</u><br/>1. 343: Block 9 - Channel 1<br/>2. 152: Channel 9 |
+| Hammer | Hand Mortar Battery | <u>Fire-Data Controller</u><br/>1. 343: Block 5 - Channel 8<br/>2. 152: Channel 8<br/><u>Everyone Else</u><br/>1. 343: Block 5 - Channel 8 |
+| Arrow | All Elements | <u>Everyone</u><br/>1. 343: Block 5 - Channel 9<br/>2. 152: Channel 9 |
 
 ## 4. Radio Operator
 

@@ -8,7 +8,7 @@ Join the [Discord](https://uagpmc.com/discord) and ask for a recruiter or messag
 
 ### 2a. When are our operations?
 
-Our operation times are **Saturday and Sunday at 17:00 UTC** check on the bottom of our [website](https://uagpmc.com/) for a timer till our next operation.
+Our session times are every **Saturday and Sunday at 17:30 UTC** check on the bottom of our [website](https://unnamed.group/) or top-right of our Discord for a countdown to the next one.
 
 ### 2b. Can't Attend a Session?
 
@@ -18,7 +18,7 @@ If you cant attend a session during your time as a shiny please contact one of t
 
 To use our premade loadouts:
 
-1. Go to [this page](https://loadouts.unnamed.group) and remember the "code" (in square-brackets!)
+1. Go to [this page](https://unnamed.group/loadouts) and remember the "code" (in square-brackets!)
 2. In-game, use the "UAG Arsenal" option on an arsenal box or resupply vehicle
 3. Enter the code and click "submit"
 4. ???
@@ -30,7 +30,7 @@ Shinies choose their roles after the rest of the group, and will generally be pu
 
 ### 2f. Recruitment Process
 
-As a shiny you must attend **two to four** sessions before we can consider you a full member. We use internal voting to decide whether or not we extend your recruitment, kick you out, or allow you to join based off of your attitude towards other players.
+As a shiny, you will attend (on average) **three** sessions before we can consider you a full member. We use internal voting to decide whether or not we extend your recruitment, kick you out, or allow you to join based off of your attitude towards other players.
 
 ## 3. Modpack Setup
 
@@ -62,16 +62,11 @@ Updating the modpack is simple! All you need to do is restart your **ArmA III La
 
 **Unload All** the mods, select **More** and then select **Unsubscribe From All Mods**. if you can't do so then unsubscribe from all the mods manually.
 
-## 4. Setting up Task Force Arrowhead Radio
+## 4. Advanced Combat Radio Environment 2 (ACRE2)
 
-### 4a. Task Force Arrowhead Radio (TFAR)
+Installing and setting up ACRE2 is easy! When we use ACRE2 it is automatically installed in our modpack and **once you launch the game it will automatically set up in your TeamSpeak 3 client!** All you need to do is just **enable the plugin** found in **Tools-> Options-> Addons** of your TS3 client - In case you have TFAR installed **make sure to disable it within the TS3 Client.**
 
-To install and set up TFAR just download our modpack once downloaded go to `C:\Program Files (x86)\Steam\steamapps\common\Arma 3\!Workshop\@Task Force Arrowhead Radio (BETA!!!)\teamspeak` and double click the task_force_radio Add-on and it should auto install into your TeamSpeak 3 client once done go to `Tools->Options->Addons` of your TS3 client and enable Task Froce ARMA 3 Radio.
-
-<!--### 3b. Advanced Combat Radio Environment 2 (ACRE2)
-
-Installing and setting up ACRE2 is easy when we use ACRE2 it is automatically installed in our modpack and once you launch the game it will automatically set up in your TeamSpeak 3 client just enable it in Tools-> Options-> Addons of your TS3 client.
--->
+If you want to know and learn how to use ACRE, click [here](https://unnamed.group/handbook/ttp/basic/radio-communication-basics.html)
 
 ## 5. Joining the Server
 

@@ -58,4 +58,46 @@ class APIController extends AbstractController
 
         return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
     }
+
+    /**
+  	 * @Route("/api/loadouts/get", name="api/loadouts/get")
+  	 */
+  	public function getLoadoutFromCode($loadoutCode = null) {
+      $loadoutCode = (isset($_GET["code"])) ? $_GET["code"] : $loadoutCode;
+      try {
+        $loadoutFind = $this->forward('App\Controller\MongoController::findExact', ["database" => "uagpmc-com", "collection" => "loadouts", "findCriteria" => ["code" => $loadoutCode]]);
+
+        $loadout = (array)$loadoutFind->getContent();
+
+        return new JsonResponse([ "success" => 1, "message" => $loadout ], Response::HTTP_OK);
+      } catch (\Exception $e) {
+        throw $e;
+
+        return new JsonResponse([ "success" => 0, "message" => "mongo said no" ], Response::HTTP_BAD_REQUEST);
+      }
+
+  		return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
+  	}
+
+	/**
+	 * @Route("/api/loadouts/list", name="api/loadouts/list")
+	 */
+	public function listLoadouts() {
+    try {
+      $loadoutsCollection = $this->forward('App\Controller\MongoController::getCollectionDocuments', ["database" => "uagpmc-com", "collection" => "loadouts"]);
+
+      foreach ((array)$loadoutsCollection->getContent() as $key => $value) {
+        $returnArr[$key] = $value;
+      }
+
+      return new JsonResponse([ "success" => 1, "message" => $returnArr ], Response::HTTP_OK);
+    } catch (\Exception $e) {
+      throw $e;
+
+      return new JsonResponse([ "success" => 0, "message" => "mongo said no" ], Response::HTTP_BAD_REQUEST);
+    }
+
+		return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
+	}
+
 }

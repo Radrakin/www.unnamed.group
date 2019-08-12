@@ -1,0 +1,84 @@
+#!/bin/bash
+
+echo "Are you sure you want to tag?"
+read -p "Press enter to continue"
+
+increment_version() {
+ local v=$1
+ if [ -z $2 ]; then
+    local rgx='^((?:[0-9]+\.)*)([0-9]+)($)'
+ else
+    local rgx='^((?:[0-9]+\.){'$(($2-1))'})([0-9]+)(\.|$)'
+    for (( p=`grep -o "\."<<<".$v"|wc -l`; p<$2; p++)); do
+       v+=.0; done; fi
+ val=`echo -e "$v" | perl -pe 's/^.*'$rgx'.*$/$2/'`
+ echo "$v" | perl -pe s/$rgx.*$'/${1}'`printf %0${#val}s $(($val+1))`/
+}
+
+if [[ -z $1 ]]; then
+  echo "tag name is unset"
+  exit 2
+fi
+
+case $1 in
+  "major" | "minor" | "patch" )
+    tagName=$(git describe --abbrev=0 --tags)
+    tagName=${tagName/v}
+    tagName=${tagName/-b*}
+    case $1 in
+      "patch" )
+        tagName=$(increment_version $tagName)
+      ;;
+      "minor" )
+        tagName=$(increment_version $tagName 2)
+        tagName=$tagName.0
+      ;;
+      "major" )
+	echo "you're not allowed to do that! >:(" && exit 0
+        tagName=$(increment_version $tagName 1)
+        tagName=$tagName.0.0
+      ;;
+      * )
+        exit 0
+      ;;
+    esac
+    tagName=$(echo v$tagName)
+  ;;
+  * )
+    tagName=$1
+  ;;
+esac
+
+BUILD=$(date +%y%m%d%H%M%S)
+
+rm -f VERSION
+echo $tagName >> VERSION
+truncate -s $(($(stat -c '%s' VERSION)-1)) VERSION
+cp VERSION ./VERSION
+git add VERSION ./VERSION
+
+rm -f BUILD
+echo $BUILD >> BUILD
+truncate -s $(($(stat -c '%s' BUILD)-1)) BUILD
+cp BUILD ./BUILD
+git add BUILD ./BUILD
+
+git commit -m "update VERSION and BUILD files [skip ci]"
+git tag "$tagName-pre"
+
+bin/lib/makeChangelog.go -o CHANGELOG.md
+sed -i -e 's/...HEAD/...master/g' CHANGELOG.md
+sed -i -e 's/-pre(?!))//g' CHANGELOG.md
+sed -i -E '/\".+-b[[:digit:]]{8,}\"/d' CHANGELOG.md
+sed -i -E '/\[.+-b[[:digit:]]{8,}\]/d' CHANGELOG.md
+cp CHANGELOG.md ./CHANGELOG.md
+git add CHANGELOG.md ./CHANGELOG.md
+
+git commit -m "$tagName-b$BUILD: automated release"
+git tag "$tagName-b$BUILD"
+
+git push
+git push --tags
+
+#!eof
+

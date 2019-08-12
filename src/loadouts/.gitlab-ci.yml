@@ -1,0 +1,13 @@
+stages:
+- update_app
+
+update_app:
+  image: google/cloud-sdk
+  stage: update_app
+  script:
+    - echo "$GITLAB_GOOGLE_SERVICE_ACCOUNT" > key.json && sleep 2 && gcloud auth activate-service-account --key-file key.json
+    - gcloud builds submit --tag=gcr.io/zeue-net/tests/loadouts-uag-zeue-net:latest --project=zeue-net
+      #    - gsutil cp gs://zeue-net-secrets/app-engine-configs/handbook.uag.zeue.net/app.yaml .
+    - gcloud app deploy ./app.yaml --image-url=gcr.io/zeue-net/tests/loadouts-uag-zeue-net:latest --version=${CI_COMMIT_TAG//./-} --quiet --project=zeue-net
+  only:
+    - tags

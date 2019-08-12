@@ -31,6 +31,25 @@ class MongoController extends AbstractController
         return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
     }
 
+    public function getCollectionDocuments($database = null, $collection = null)
+    {
+        try {
+          $client = $this->getMongoClient();
+
+          $collection = $client->selectCollection($database, $collection);
+
+          foreach ($collection->find() as $document) {
+              $returnArr[] = (array)$document;
+          }
+
+          return new JsonResponse([ "success" => 1, "message" => $returnArr ], Response::HTTP_OK);
+        } catch (\Exception $e) {
+          return new JsonResponse(["success" => 0, "message" => "generic error 20"], Response::HTTP_BAD_REQUEST);
+        }
+
+        return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
+    }
+
     public function insertOne($database = null, $collection = null, $data = null)
     {
         if ($database && $collection && $data) {

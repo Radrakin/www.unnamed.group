@@ -1,0 +1,23 @@
+{
+  "name": "loadouts-library",
+  "version": "1.0.0",
+  "description": "https://loadouts.uagpmc.com/",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js 80",
+    "dev": "nodemon index.js 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/uag/loadouts-library.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/uag/loadouts-library/issues"
+  },
+  "homepage": "https://gitlab.com/uag/loadouts-library#README",
+  "dependencies": {
+    "nodemon": "^1.18.9"
+  }
+}

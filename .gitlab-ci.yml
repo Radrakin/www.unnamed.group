@@ -11,6 +11,4 @@ deploy_to_dev:
     - gcloud beta container clusters get-credentials regret --region europe-west2-a --project zeue-personal
     - kubectl patch deployment www-unnamed-group --namespace shared-webhost -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
   only:
-    - branches
-    - master
-    - pushes
+    - tags

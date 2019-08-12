@@ -30,7 +30,7 @@ Shinies choose their roles after the rest of the group, and will generally be pu
 
 ### 2f. Recruitment Process
 
-As a shiny you must attend **three** sessions before we can consider you a full member. We use internal voting to decide whether or not we extend your recruitment, kick you out, or allow you to join based off of your attitude towards other players.
+As a shiny, you will attend (on average) **three** sessions before we can consider you a full member. We use internal voting to decide whether or not we extend your recruitment, kick you out, or allow you to join based off of your attitude towards other players.
 
 ## 3. Modpack Setup
 

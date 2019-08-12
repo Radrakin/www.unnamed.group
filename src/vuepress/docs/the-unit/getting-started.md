@@ -66,6 +66,8 @@ Updating the modpack is simple! All you need to do is restart your **ArmA III La
 
 Installing and setting up ACRE2 is easy! When we use ACRE2 it is automatically installed in our modpack and **once you launch the game it will automatically set up in your TeamSpeak 3 client!** All you need to do is just **enable the plugin** found in **Tools-> Options-> Addons** of your TS3 client - In case you have TFAR installed **make sure to disable it within the TS3 Client.**
 
+If you want to know and learn how to use ACRE, click [here](https://unnamed.group/handbook/ttp/basic/radio-communication-basics.html)
+
 ## 5. Joining the Server
 
 Before joining the server you are required to do two things:

@@ -6,117 +6,117 @@
 
 > UAG's structure may change during sessions to fit the current situation better, but the general structure supports our focus on "small team tactics" no matter how many people are attending a session. If you'd like to see what each section of our unit consists of click [here](https://docs.google.com/spreadsheets/d/1W4-Mh9GVGOE1lOUFWXP6kdn8-ff6zPSD_br0uqTUtdE/edit#gid=0).
 
-### 1A. Crossroads
+### 1a. Crossroads
 
 `...`
 
-#### - Banana Boys
+#### Banana Boys
 
 The Banana Boys are the **special forces** of the unit. They are assigned to specific tasks such as **taking out high profile targets** during an operation, and utilize specialized weapons in order to execute their role.
 
-### 1B. Wolfpack
+### 1b. Wolfpack
 
 Wolfpack are a motorized infantry section which utilize a **mixture of armoured vehicles and infantry** in their execution of an objective. During operations they are provided support from other sections - mainly **Armadillo**, **Hammer**, **Arrow** and **Pathfinder** as well as **Talon** and **Sabre** in specific situations.
 
-#### - Section Command Team
+#### Section Command Team
 
 The Section Command Team has two tasks, to **lead** the Section itself as well as provide **medical support** to the rest of the Section through the **Section Medic**.
 
-#### - Base-of-Fire Team
+#### Base-of-Fire Team
 
 The Base-of-Fire Team are typically assigned as a support team to **provide cover fire** to Assault Teams **Alpha** and **Bravo** as they assault the objective assigned during an operation. They typically utilize long ranged weapons and LMGs to execute their role. 
 
-#### - Assault Team Alpha
+#### Assault Team Alpha
 
 Assault Team Alpha is one of the primary assault teams in **Wolfpack**. They are tasked with **assaulting**, **claiming** and **holding** an objective until the completion of the operation. They are capable in **wiping out hard points** during an operation thanks to the **Grenadier** in their fireteam.
 
-#### - Assault Team Bravo
+#### Assault Team Bravo
 
 Assault Team Bravo is one of the primary assault teams in **Wolfpack**. They are tasked with **assaulting**, **claiming** and **holding** an objective as well as **clearing out hostiles within buildings** with the assigned **Pointman** in the fireteam.
 
-### 1C. Talon
+### 1c. Talon
 
 Talon are a Airborne section which utilize air transport and other airborne elements in their execution of an objective. During operations they are provided support from other sections - mainly **Hammer**, **Arrow** and **Pathfinder** as well as **Armadillo** and **Wolfpack** if available.
 
-#### - Section Command Team
+#### Section Command Team
 
 The Section Command Team has three tasks, to **lead** the Section itself as well as **provide suppressing fire** on any hostile elements within an area of operations and **overwatch support** to Teams **One** and **Two**. As well as provide **medical support** to the rest of the Section through the **Section Medic**.
 
-#### - Team One
+#### Team One
 
 Team One is one of the primary fireteams in **Talon**. They are tasked with **assaulting**, **claiming** and **holding** an objective until the completion of the operation in coordination with **Team Two**.
 
-#### - Team Two
+#### Team Two
 
 Team Two is one of the primary fireteams in **Talon**. They are tasked with **assaulting**, **claiming** and **holding** an objective until the completion of the operation in coordination with **Team One**.
 
-### 1D. Sabre
+### 1d. Sabre
 
 Sabre is the heavy infantry section of the unit which utilize heavy weaponry in their execution of an obejective. They are typically tasked with taking over difficult objectives and are usually provided support from **Armadillo**, **Hammer**, **Arrow** as well as **Pathfinder** and  **Wolfpack** if available.
 
-#### - Section Command Team
+#### Section Command Team
 
 The Section Command Team has two tasks, to **lead** the Section itself as well as provide **medical support** to the rest of the Section through the **Section Medic**.
 
-#### - Base-of-Fire Team
+#### Base-of-Fire Team
 
 The Base-of-Fire Team are typically assigned as a support team to **provide cover fire** to Assault Teams **Alpha** and **Bravo** as they assault the objective assigned during an operation. Within Sabre, they utilize long ranged weaponry, MATs and MMGs to execute their role.
 
-#### - Assault Team
+#### Assault Team
 
 The Assault Team in Sabre is the primary assault squad. They are tasked with **assaulting**, **claiming** and **holding** while **wiping out hard points** and **clearing out hostiles within buildings** until the completion of the operation.
 
-### 1E. Phantom
+### 1e. Phantom
 
 Phantom is the Special Operations section of the unit. They are assigned to specific tasks such as **taking out high profile targets** in an AO. 
 
-### 1F. Armadillo
+### 1f. Armadillo
 
 Armadillo is the Heavy Armour Section of the unit. They are mainly attached to one of the aformentioned sections such as **Wolfpack** and are tasked as a support group in assaulting objectives.
 
-### 1G. Hammer
+### 1g. Hammer
 
 Hammer is the Artillery section of the unit and are usually attached to one of the aforementioned sections such as **Wolfpack** and are tasked as a artillery support group in assaulting objectives.
 
-### 1H. Pathfinder
+### 1h. Pathfinder
 
 Typically having one team from this section attached with one of the aformentioned sections, Pathfinder is mainly tasked with **providing reconnaissance** over an objective prior an assault. Equipped with various specialist weaponry, Pathfinder executes its various roles as efficiently as possible.
 
-#### - Recon Lead
+#### Recon Lead
 
-#### - Anti-Material Team
+#### Anti-Material Team
 
 Equipped with an Anti-Material rifle, the team is tasked with **taking out hard targets** within an area of operations.
 
-#### - Sniper Team
+#### Sniper Team
 
 Equipped with long range weaponry, they are tasked with providing **reconnaisance over an objective** and **taking out high profile targets**.
 
-### 1I. Arrow
+### 1i. Arrow
 
 Aerial section of the unit, typically assigned as an ancillary to the aformentioned sections.
 
-#### - Hotel
+#### Hotel
 
 Transport.
 
-#### - Reaper
+#### Reaper
 
 Attack Helicopters.
 
-#### - Eagle
+#### Eagle
 
 Jets.
 
-#### - Spooky
+#### Spooky
 
 Gunship.
 
-#### - Weasel
+#### Weasel
 
 Anti-Radar.
 
-##### - Reclaimer
+##### Reclaimer
 
 Special Materials Acquisition Reclemation Team, typically assigned as an ancillary as well.
 

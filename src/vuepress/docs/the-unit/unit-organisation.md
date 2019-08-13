@@ -56,11 +56,19 @@ Sabre is the heavy infantry section of the unit which utilize heavy weaponry in 
 
 #### - Section Command Team
 
+The Section Command Team has two tasks, to **lead** the Section itself as well as provide **medical support** to the rest of the Section through the **Section Medic**.
+
 #### - Base-of-Fire Team
+
+The Base-of-Fire Team are typically assigned as a support team to **provide cover fire** to Assault Teams **Alpha** and **Bravo** as they assault the objective assigned during an operation. Within Sabre, they utilize long ranged weaponry, MATs and MMGs to execute their role.
 
 #### - Assault Team
 
+The Assault Team in Sabre is the primary assault squad. They are tasked with **assaulting**, **claiming** and **holding** while **wiping out hard points** and **clearing out hostiles within buildings** until the completion of the operation.
+
 ### 1E. Phantom
+
+Phantom is the Special Operations section of the unit. They are assigned to specific tasks such as **taking out high profile targets** in an AO. 
 
 ### 1F. Armadillo
 
@@ -68,29 +76,49 @@ Armadillo is the Heavy Armour Section of the unit. They are mainly attached to o
 
 ### 1G. Hammer
 
-#### - Forward Observation
+Hammer is the Artillery section of the unit and are usually attached to one of the aforementioned sections such as **Wolfpack** and are tasked as a artillery support group in assaulting objectives.
 
-`...`
+### 1H. Pathfinder
 
-### 1H. Recon Team
+Typically having one team from this section attached with one of the aformentioned sections, Pathfinder is mainly tasked with **providing reconnaissance** over an objective prior an assault. Equipped with various specialist weaponry, Pathfinder executes its various roles as efficiently as possible.
 
-`...`
+#### - Recon Lead
 
-#### - Remote Surveillance Team
+#### - Anti-Material Team
 
-`...`
-
-#### - Force Recon Team
-
-`...`
+Equipped with an Anti-Material rifle, the team is tasked with **taking out hard targets** within an area of operations.
 
 #### - Sniper Team
 
-`...`
+Equipped with long range weaponry, they are tasked with providing **reconnaisance over an objective** and **taking out high profile targets**.
 
-### 1I. Air Corps
+### 1I. Arrow
 
-`...`
+Aerial section of the unit, typically assigned as an ancillary to the aformentioned sections.
+
+#### - Hotel
+
+Transport.
+
+#### - Reaper
+
+Attack Helicopters.
+
+#### - Eagle
+
+Jets.
+
+#### - Spooky
+
+Gunship.
+
+#### - Weasel
+
+Anti-Radar.
+
+##### - Reclaimer
+
+Special Materials Acquisition Reclemation Team, typically assigned as an ancillary as well.
 
 ## 2. Non-Combat Groups (NCGs)
 

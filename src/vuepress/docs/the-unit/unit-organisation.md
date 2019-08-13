@@ -6,83 +6,89 @@
 
 > UAG's structure may change during sessions to fit the current situation better, but the general structure supports our focus on "small team tactics" no matter how many people are attending a session. If you'd like to see what each section of our unit consists of click [here](https://docs.google.com/spreadsheets/d/1W4-Mh9GVGOE1lOUFWXP6kdn8-ff6zPSD_br0uqTUtdE/edit#gid=0).
 
-### 1a. Crossroads
+### 1A. Crossroads
 
 `...`
 
-#### Banana Boys
+#### - Banana Boys
 
-The Banana Boys are the special forces of the unit. They are assigned to specific tasks such as taking out high profile targets during an operation, and utilize specialized weapons in order to execute their role.
+The Banana Boys are the **special forces** of the unit. They are assigned to specific tasks such as **taking out high profile targets** during an operation, and utilize specialized weapons in order to execute their role.
 
-### 1b. Wolfpack
+### 1B. Wolfpack
 
-Wolfpack are a motorized infantry section which utilize a mixture of armoured vehicles in their execution of an objective. During operations they are provided support from other sections - mainly **Armadillo**, **Hammer**, **Arrow** and **Pathfinder** as well as **Talon** and **Sabre**.
+Wolfpack are a motorized infantry section which utilize a **mixture of armoured vehicles and infantry** in their execution of an objective. During operations they are provided support from other sections - mainly **Armadillo**, **Hammer**, **Arrow** and **Pathfinder** as well as **Talon** and **Sabre** in specific situations.
 
-#### Base-of-Fire Team
+#### - Section Command Team
 
-The Base-of-Fire Team are typically assigned as a support team to provide cover fire to Assault Teams **Alpha** and **Bravo** as they assault the objective assigned during an operation.
+The Section Command Team has two tasks, to **lead** the Section itself as well as provide **medical support** to the rest of the Section through the **Section Medic**.
 
-#### Assault Team Alpha
+#### - Base-of-Fire Team
 
-Assault Team Alpha is one of the primary assault teams in **Wolfpack**. They are tasked with **assaulting**, **claiming** and **holding** an objective until the completion of the operation.
+The Base-of-Fire Team are typically assigned as a support team to **provide cover fire** to Assault Teams **Alpha** and **Bravo** as they assault the objective assigned during an operation. They typically utilize long ranged weapons and LMGs to execute their role. 
 
-#### Assault Team Bravo
+#### - Assault Team Alpha
 
-Assault Team Bravo is one of the primary assault teams in **Wolfpack**. They are tasked with **assaulting**, **claiming** and **holding** an objective as well as **clearing out hostiles within buildings** with the assigned pointman in the fireteam.
+Assault Team Alpha is one of the primary assault teams in **Wolfpack**. They are tasked with **assaulting**, **claiming** and **holding** an objective until the completion of the operation. They are capable in **wiping out hard points** during an operation thanks to the **Grenadier** in their fireteam.
 
-### 1c. Talon
+#### - Assault Team Bravo
+
+Assault Team Bravo is one of the primary assault teams in **Wolfpack**. They are tasked with **assaulting**, **claiming** and **holding** an objective as well as **clearing out hostiles within buildings** with the assigned **Pointman** in the fireteam.
+
+### 1C. Talon
 
 Talon are a Airborne section which utilize air transport and other airborne elements in their execution of an objective. During operations they are provided support from other sections - mainly **Hammer**, **Arrow** and **Pathfinder** as well as **Armadillo** and **Wolfpack** if available.
 
-#### Section Command Team
+#### - Section Command Team
 
-The Section Command Team has two tasks, to lead the Section itself as well as provide suppressing fire on any hostile elements within an area of operations and overwatch support to Teams **One** and **Two**.
+The Section Command Team has three tasks, to **lead** the Section itself as well as **provide suppressing fire** on any hostile elements within an area of operations and **overwatch support** to Teams **One** and **Two**. As well as provide **medical support** to the rest of the Section through the **Section Medic**.
 
-#### Team One
+#### - Team One
 
 Team One is one of the primary fireteams in **Talon**. They are tasked with **assaulting**, **claiming** and **holding** an objective until the completion of the operation in coordination with **Team Two**.
 
-#### Team Two
+#### - Team Two
 
 Team Two is one of the primary fireteams in **Talon**. They are tasked with **assaulting**, **claiming** and **holding** an objective until the completion of the operation in coordination with **Team One**.
 
-### 1d. Sabre
+### 1D. Sabre
 
-#### Section Command Team
+Sabre is the heavy infantry section of the unit which utilize heavy weaponry in their execution of an obejective. They are typically tasked with taking over difficult objectives and are usually provided support from **Armadillo**, **Hammer**, **Arrow** as well as **Pathfinder** and  **Wolfpack** if available.
 
-#### Base-of-Fire Team
+#### - Section Command Team
 
-#### Assault Team
+#### - Base-of-Fire Team
 
-### 1e. Phantom
+#### - Assault Team
 
-### 1f. Armadillo
+### 1E. Phantom
+
+### 1F. Armadillo
 
 Armadillo is the Heavy Armour Section of the unit. They are mainly attached to one of the aformentioned sections such as **Wolfpack** and are tasked as a support group in assaulting objectives.
 
-### 1g. Hammer
+### 1G. Hammer
 
-#### Forward Observation
-
-`...`
-
-### 1h. Recon Team
+#### - Forward Observation
 
 `...`
 
-#### Remote Surveillance Team
+### 1H. Recon Team
 
 `...`
 
-#### Force Recon Team
+#### - Remote Surveillance Team
 
 `...`
 
-#### Sniper Team
+#### - Force Recon Team
 
 `...`
 
-### 1i. Air Corps
+#### - Sniper Team
+
+`...`
+
+### 1I. Air Corps
 
 `...`
 
@@ -138,34 +144,7 @@ The main goals of the Team Leader in UAG are as follows:
 
 4. The Team Lead must ensure that all members of the team are enjoying their time and not finding it tedious due to them dying several times in a row.
 
-## 4. Radio Communication
-
-The team leader's main tool for communication with both of his team and other team leaders as well as with Section Command is the 152 Radio.
-
-### 4a. How to use the 152 radio
-
-To use the 152 radio hold down the 'Left Control' button and press 'P'. This will bring up the radio interface. The recommended setup is as follows:
-Say for instance you are in Wolfpack, the radio setup for Wolfpack is 31. Hence the setup should be as follows:
-
-- Channel 1: 31.1 (Blue Team)
-
-- Channel 2: 31.2 (Red Team)
-
-- Channel 3: 31.3 (Green Team)
-
-- Channel 4: 31 (Set as additional channel with the right arrow key displayed on the interface and set as speaker with the left arrow key.)
-
-To use the additional channel and your main channel as detailed above, make sure that 'Channel 4' is set as 'Additional Channel 4' and switch to the channel of your respective team by having it displayed on the radio interface or by using the numpad, 1, 2 or 3 respectively. In order to communicate between the two channels, hold down the 'Caps Lock' button to communicate with your respective team and hold down the letter 'T' button to communicate with Section Command and other team leads. It is important to not switch hastily between the two channels due to a small limitation within the mod. If you do so, whatever you transmit will be most likely transmitted to the wrong channel.
-
-Due to 'Channel 4' being set as 'Additional Channel 4', you will be able to hear both your team's chatter as well as the chatter of section command. Radio communication may be confusing at first due to several people chattering at the same time, but you will get a hang of it and learn who is who. In case you cannot hear what Section Command is saying due to unnecessary chatter, go on your respective team's radio by holding the 'Caps Lock' button and say "Clear Comms". Your team members should know this term and will not use the radio until told otherwise or when transmitting important information.
-
-It is important to know what section and team you are in, in order to prevent confusion and miscommunication.
-
-### 4b. When to use the 152 radio
-
-The 152 radio is used by the team lead to coordinate the members of the team. It is also used to send information and recieve orders to and from Section Command. Use the 152 radio to call out the status of the team, for instance, if you are under fire you are to call it out to the Section Commander by saying "Contact". A full list of Radio Terminology is found [here].
-
-### 4c. Strategy
+### 3c. Strategy
 
 While pursuing the objective the Team Lead must understand basic formations, such as the Wedge and Column formations. The Team Lead must also understand when and where to use them given a particular situation.
 
@@ -179,7 +158,7 @@ Furthermore while pursuing the objective, the Team Lead must keep several things
 
 4. **Buddy Teams** - One of the Golden Rules of UAG. When separating someone from the team, ensure that they have another member within your team with them to ensure that they survive any encounter and you recieve comms if one of them goes down.
 
-### 4d. Initiative
+### 3d. Initiative
 
 It is important for the Team Lead to have initiative when pursuing the objective during an OP. Meaning that the Team Lead must have a clear strategy in mind while pursuing the given objective. In most cases you are to always think two steps ahead and having a fallback plan in place should things go awry. Initiative is also key when taking any actions necessary should things go wrong or not as planned.
 

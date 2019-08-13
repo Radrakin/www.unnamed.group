@@ -8,7 +8,10 @@ The goal is to allow you to get a quick understanding of what we expect regardin
 
 ## 2. Radio Protocols
 
-`...`
+1. Make sure that your message is **clear**.
+2. Keep messages as **short and sweet** as possible.
+3. Always acknowledge that you **recieved and understood** the order given.
+4. If your last message had **wrong information**, **correct it immediately** and **send** again.
 
 ## 3. Radio Configuration Reference
 
@@ -45,3 +48,18 @@ During an operation, you will have to switch your PTT between the different radi
 - PTT 3 : 117 radios
 
 When switching between active radios, you will just have to set the PTT using ACE interact.
+
+## 5. Keywords
+
+| Keyword | Meaning | Example |
+| Over | The end of a message. | **Section Command**: Alpha this is Crossroads over. |
+| Send | The reciever is ready to hear the message. | **Section Command**: Alpha this is Crossroads over.<br/>**Assault Team Alpha**: This is Alpha, send over. |
+| Out | End of the radio conversation. | Example Below. |
+| Roger/Copy | Yes I understood your message. | **Section Command**: Alpha this is Crossroads over.<br/>**Assault Team Alpha**: This is Alpha, send over.<br/>**Section Command**: Alpha move to waypoint marker 2.<br/>**Assault Team Alpha**: Roger out.|
+| Say Again | Repeat last message. | **Section Command**: Alpha this is Crossroads over.<br/>**Assault Team Alpha**: This is Alpha, send over.<br/>**Section Command**: Alpha move to waypoint marker 2.<br/>**Assault Team Alpha**: Say again over.<br/>**Section Command**: Alpha move to waypoint marker 2.<br/>**Assault Team Alpha**: Roger out.|
+| Target | Hostile targets that are not engaging you or friendly forces. | **Assault Team Alpha**: This is Alpha to Crossroads over.<br/>**Section Command**: This is Crossroads send.<br/>**Assault Team Alpha**: Spotted hard target bearing 230 from our position. Over<br/>**Section Command**: Roger that Alpha, maintain distance do not engage. Over.<br/>**Assault Team Alpha**: Roger that. Alpha Out.|
+| Soft | Lightly armoured targets such as infantry and light vehicles. | N/A |
+| Hard | Heavy armoured targets such as tanks and other heavy vehicles. | N/A |
+| Bogey | Aerial targets such as helicopters and airplanes. | N/A |
+| Contact | Used when your team is under fire. | **Assault Team Alpha**: Crossroads this is Alpha. Soft contact, firing at will. Over.<br/>**Section Command**: Roger that Alpha. All elements begin the assault. Over.<br/>**Assault Team Alpha**: This is Alpha. Roger out.<br/>**Assault Team Bravo**: This is Bravo. Roger out.<br/>**Base-of-Fire Team**: This is Base-of-Fire. Roger out.|
+| Break | This is typically used to break up a long message in case<br/>you need to check something before continuing. | **Assault Team Alpha**: This is Alpha to Crossroads over.<br/>**Section Command**: This is Crossroads send.<br/>**Assault Team Alpha**: Spotted hard contact bearing 230 from our position break-<br/>**Assault Team Alpha**: Grid location 426 801, keypad 4 over.<br/>**Section Command**: Roger that Alpha, sending Eagle to support. Out.|

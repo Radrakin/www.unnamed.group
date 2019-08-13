@@ -16,7 +16,7 @@ The Banana Boys are the **special forces** of the unit. They are assigned to spe
 
 ### 1b. Wolfpack
 
-Wolfpack are a motorized infantry section which utilize a **mixture of armoured vehicles and infantry** in their execution of an objective. During operations they are provided support from other sections - mainly **Armadillo**, **Hammer**, **Arrow** and **Pathfinder** as well as **Talon** and **Sabre** in specific situations.
+Wolfpack are a motorized infantry section which utilize a **mixture of armoured vehicles and infantry** in their execution of an objective.
 
 #### Section Command Team
 
@@ -36,23 +36,19 @@ Assault Team Bravo is one of the primary assault teams in **Wolfpack**. They are
 
 ### 1c. Talon
 
-Talon are a Airborne section which utilize air transport and other airborne elements in their execution of an objective. During operations they are provided support from other sections - mainly **Hammer**, **Arrow** and **Pathfinder** as well as **Armadillo** and **Wolfpack** if available.
+Talon are a Airborne section which utilize air transport and other airborne elements, typically Littlebirds, in their execution of an objective.
 
 #### Section Command Team
 
 The Section Command Team has three tasks, to **lead** the Section itself as well as **provide suppressing fire** on any hostile elements within an area of operations and **overwatch support** to Teams **One** and **Two**. As well as provide **medical support** to the rest of the Section through the **Section Medic**.
 
-#### Team One
+#### Teams One & Two
 
-Team One is one of the primary fireteams in **Talon**. They are tasked with **assaulting**, **claiming** and **holding** an objective until the completion of the operation in coordination with **Team Two**.
-
-#### Team Two
-
-Team Two is one of the primary fireteams in **Talon**. They are tasked with **assaulting**, **claiming** and **holding** an objective until the completion of the operation in coordination with **Team One**.
+Team One and Two are the primary fireteams in **Talon**. They are tasked with **assaulting**, **claiming** and **holding** an objective until the completion of the operation in coordination with each other.
 
 ### 1d. Sabre
 
-Sabre is the heavy infantry section of the unit which utilize heavy weaponry in their execution of an obejective. They are typically tasked with taking over difficult objectives and are usually provided support from **Armadillo**, **Hammer**, **Arrow** as well as **Pathfinder** and  **Wolfpack** if available.
+Sabre is the heavy infantry section of the unit which utilize heavy weaponry in their execution of an obejective. They are typically tasked with taking over difficult objectives.
 
 #### Section Command Team
 

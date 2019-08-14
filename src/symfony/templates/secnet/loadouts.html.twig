@@ -5,41 +5,88 @@
   #bodyWrapper {
     margin-top: 10px;
   }
+  .modal {
+    max-height: 100%;
+    width: fit-content;
+  }
+  .modal .modal-content {
+    padding: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+  .modal-content > img {
+    height: 90vh;
+    margin: auto;
+  }
 </style>
 {% endblock %}
 
 {% block body %}
 
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.4.0.slim.min.js" integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
 <div class="row">
   <div class="col s12">
     <ul class="tabs">
       <li class="tab col s3"><a class="active" href="#publictab">Public</a></li>
-      <li class="tab col s3 disabled"><a href="#personaltab">Personal</a></li>
+      <li class="tab col s3"><a href="#personaltab">Personal</a></li>
+      <li class="tab col s3 disabled"><a href="#themedtab">Themed</a></li>
     </ul>
   </div>
   <div id="publictab" class="col s12">
     <div class="card-panel white black-text">
       <h4>Public Loadouts</h4>
       <hr>
-      <table>
-        <tr>
-          <th>CODE</th>
-          <th>NAME</th>
-          <th style="max-width: 50vw;">DESCRIPTION</th>
-          <th>LINK</th>
-        </tr>
-        {% for x in loadouts.public %}
+      <table class="datatable">
+        <thead>
           <tr>
-            <td>{{x.code}}</td>
-            <td>{{x.name}}</td>
-            <td style="max-width: 50vw;">{% filter markdown %}{{x.description}}{% endfilter %}</td>
-            <td><a href="/api/loadout/{{x.code}}" target="_blank">Open in API</a></td>
+            <th>CODE</th>
+            <th>FACTION</th>
+            <th>NAME</th>
+            <th>CAMO</th>
+            <th>DESCRIPTION</th>
+            <th>IMAGE</th>
           </tr>
-        {% endfor %}
+        </thead>
+        <tbody>
+          {% for x in loadouts.public %}
+            <tr>
+              <td><a href="/api/loadout/{{x.code}}" target="_blank">{{x.code}}</a></td>
+              <td>{{x.faction}}</td>
+              <td>{{x.name}}</td>
+              <td>{{x.camo}}</td>
+              <td style="max-width: 25vw;">{% filter markdown %}{{x.description}}{% endfilter %}</td>
+              <td style="max-width: 10vw;"><a class="modal-trigger" href="#modal1"><img class="responsive-img" src="{{x.image}}"></a></td>
+            </tr>
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                <img class="responsive-img" src="{{x.image}}">
+              </div>
+            </div>
+          {% endfor %}
+        </tbody>
       </table>
     </div>
   </div>
   <div id="personaltab" class="col s12"></div>
+  <div id="themedtab" class="col s12"></div>
 </div>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var options = {
+      "startingTop":"0%",
+      "endingTop":"0%"
+    };
+    var instances = M.Modal.init(elems, options);
+  });
+
+  $(document).ready( function () {
+      $('.datatable').DataTable();
+  } );
+</script>
 
 {% endblock %}

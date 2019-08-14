@@ -16,5 +16,6 @@ return [
     Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['all' => true],
     KnpU\OAuth2ClientBundle\KnpUOAuth2ClientBundle::class => ['all' => true],
     Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle::class => ['all' => true],
-    FOS\UserBundle\FOSUserBundle::class => ['all' => true]
+    FOS\UserBundle\FOSUserBundle::class => ['all' => true],
+    Twig\Markdown\Bundle\TwigMarkdownBundle::class => ['all' => true],
 ];

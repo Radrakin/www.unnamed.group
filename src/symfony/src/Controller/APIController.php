@@ -79,12 +79,26 @@ class APIController extends AbstractController
   		return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
   	}
 
+    /**
+     * @Route("/api/loadout/{code}", methods={"GET"}, name="loadout/get")
+     */
+    public function indexGet(string $code)
+    {
+      $loadout = json_decode($this->forward('App\Controller\APIController::getLoadoutFromCode', ["loadoutCode" => $code])->getContent(), true);
+      $loadoutFinal = json_decode($loadout["message"][0], true)["message"][0]["content"];
+
+      return $this->render('loadout/index.html.twig', [
+          'returnSingleLoadout' => true,
+          'loadout' => $loadoutFinal
+      ]);
+    }
+
 	/**
 	 * @Route("/api/loadouts/list", name="api/loadouts/list")
 	 */
-	public function listLoadouts() {
+	public function listPublicLoadouts() {
     try {
-      $loadoutsCollection = $this->forward('App\Controller\MongoController::getCollectionDocuments', ["database" => "uagpmc-com", "collection" => "loadouts"]);
+      $loadoutsCollection = $this->forward('App\Controller\MongoController::findExact', ["database" => "uagpmc-com", "collection" => "loadouts", "findCriteria" => ["scope" => "public"]]);
 
       foreach ((array)$loadoutsCollection->getContent() as $key => $value) {
         $returnArr[$key] = $value;

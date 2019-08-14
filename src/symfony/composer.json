@@ -11,6 +11,7 @@
         "friendsofsymfony/user-bundle": "^2.1",
         "google/cloud": "^0.93.0",
         "knpuniversity/oauth2-client-bundle": "^1.27",
+        "michelf/php-markdown": "~1.8",
         "mongodb/mongodb": "^1.4",
         "paragonie/random_compat": "2.*",
         "restcord/restcord": "^0.3.1",
@@ -37,6 +38,7 @@
         "symfony/web-server-bundle": "^4.1",
         "symfony/webpack-encore-pack": "*",
         "symfony/yaml": "^4.1",
+        "twig/markdown-extension": "^1.0",
         "wohali/oauth2-discord-new": "^1.0"
     },
     "require-dev": {

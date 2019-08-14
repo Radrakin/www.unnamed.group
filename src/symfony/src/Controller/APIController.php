@@ -71,8 +71,6 @@ class APIController extends AbstractController
 
         return new JsonResponse([ "success" => 1, "message" => $loadout ], Response::HTTP_OK);
       } catch (\Exception $e) {
-        throw $e;
-
         return new JsonResponse([ "success" => 0, "message" => "mongo said no" ], Response::HTTP_BAD_REQUEST);
       }
 
@@ -106,8 +104,63 @@ class APIController extends AbstractController
 
       return new JsonResponse([ "success" => 1, "message" => $returnArr ], Response::HTTP_OK);
     } catch (\Exception $e) {
-      throw $e;
+      return new JsonResponse([ "success" => 0, "message" => "mongo said no" ], Response::HTTP_BAD_REQUEST);
+    }
 
+		return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
+	}
+
+	/**
+	 * @Route("/api/user/loadouts", name="api/user/loadouts")
+	 */
+	public function listPersonalLoadouts() {
+    try {
+      $loadoutsCollection = $this->forward('App\Controller\MongoController::findExact', ["database" => "uagpmc-com", "collection" => "loadouts", "findCriteria" => ["scope" => "personal", "owner" => $this->getUser()->getDiscordId()]]);
+
+      foreach ((array)$loadoutsCollection->getContent() as $key => $value) {
+        $returnArr[$key] = $value;
+      }
+
+      return new JsonResponse([ "success" => 1, "message" => $returnArr ], Response::HTTP_OK);
+    } catch (\Exception $e) {
+      return new JsonResponse([ "success" => 0, "message" => "mongo said no" ], Response::HTTP_BAD_REQUEST);
+    }
+
+		return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
+	}
+
+	/**
+	 * @Route("/api/user/loadout/create", name="api/user/loadout/create")
+	 */
+	public function createPersonalLoadout() {
+    try {
+      function zeue_random()
+      {
+          $data = random_bytes(16);
+          $data[6] = chr(ord($data[6]) & 0x0f | 0x40);
+          $data[8] = chr(ord($data[8]) & 0x3f | 0x80);
+          return vsprintf('%s%s%s', str_split(bin2hex($data), 4));
+      }
+
+      $loadoutCode = zeue_random();
+
+      $dataToSend = [
+        "code" => $loadoutCode,
+        "name" => $_POST["name"],
+        "faction" => $_POST["faction"],
+        "camo" => $_POST["camo"],
+        "terrains" => $_POST["terrains"],
+        "description" => $_POST["name"],
+        "image" => $_POST["imageB64"],
+        "content" => $_POST["content"],
+        "scope" => "personal",
+        "owner" => $this->getUser()->getDiscordId()
+      ];
+
+      $loadoutsCollection = $this->forward('App\Controller\MongoController::insertOne', ["database" => "uagpmc-com", "collection" => "loadouts", "data" => $dataToSend]);
+
+      return new JsonResponse([ "success" => 1, "message" => "loadout submitted!", "loadoutCode" => $loadoutCode ], Response::HTTP_OK);
+    } catch (\Exception $e) {
       return new JsonResponse([ "success" => 0, "message" => "mongo said no" ], Response::HTTP_BAD_REQUEST);
     }
 

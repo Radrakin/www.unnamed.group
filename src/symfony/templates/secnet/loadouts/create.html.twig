@@ -1,0 +1,85 @@
+{% extends 'secnet/base.html.twig' %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+      <div class="col s12">
+          <div class="card-panel white black-text">
+            <h4>Create New Loadout...</h4>
+            <hr><br>
+            <form action="/api/user/loadout/create" method="post">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input placeholder="British Rifleman" id="name" name="name" type="text" class="validate" required>
+                  <label for="name">Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s4">
+                  <input placeholder="British Armed Forces" id="faction" name="faction" type="text" class="validate">
+                  <label for="faction">Faction</label>
+                </div>
+                <div class="input-field col s4">
+                  <input placeholder="Multicam (Arid)" id="camo" name="camo" type="text" class="validate">
+                  <label for="camo">Camo</label>
+                </div>
+                <div class="input-field col s4">
+                  <input placeholder="Altis, Stratis, Malden" id="terrains" name="terrains" type="text" class="validate">
+                  <label for="terrains">Terrains</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea placeholder="This is my first loadout UwU" id="description" class="materialize-textarea" name="description"></textarea>
+                  <label for="description">Description</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="content" class="materialize-textarea" name="content" required></textarea>
+                  <label for="content">Arsenal Export</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s6">
+                  <div class="file-field input-field">
+                    <div class="btn">
+                      <span>Image</span>
+                      <input type="file" id="imageName" name="imageName" onchange="previewFile()">
+                      <input type="hidden" id="imageB64" name="imageB64" value="">
+                    </div>
+                    <div class="file-path-wrapper">
+                      <input class="file-path validate" type="text">
+                    </div>
+                  </div>
+                </div>
+                <button class="btn waves-effect waves-light green" type="submit" name="action" style="float:right;top:5.1em;">Submit
+                  <i class="material-icons right">send</i>
+                </button>
+                <img id="formImagePreview" style="max-height: 128px; max-width: 128px; display: inline-block;"/>
+              </div>
+            </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function previewFile() {
+    var preview = document.getElementById("formImagePreview");
+    var imageB64 = document.getElementById("imageB64");
+    var file    = document.querySelector('input[type=file]').files[0];
+    var reader  = new FileReader();
+
+    reader.addEventListener("load", function () {
+      preview.src = reader.result;
+      imageB64.value = reader.result;
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }
+</script>
+
+{% endblock %}

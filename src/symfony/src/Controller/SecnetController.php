@@ -42,11 +42,29 @@ class SecnetController extends AbstractController
             $public1 = json_decode($this->forward('App\Controller\APIController::listPublicLoadouts')->getContent(), true);
             $public2 = json_decode($public1["message"][0], true)["message"];
 
-            return $this->render('secnet/loadouts.html.twig', [
+            $personal1 = json_decode($this->forward('App\Controller\APIController::listPersonalLoadouts')->getContent(), true);
+            $personal2 = json_decode($personal1["message"][0], true)["message"];
+
+            return $this->render('secnet/loadouts/index.html.twig', [
                 "secnetCommonData" => $this->secnetCommonData(),
                 'loadouts' => [
-                  "public" => $public2
+                  "public" => $public2,
+                  "personal" => $personal2
                 ]
+            ]);
+        } else {
+            return $this->redirectToRoute('home');
+        }
+    }
+
+    /**
+     * @Route("/secnet/loadouts/create", name="secnet/loadouts/create")
+     */
+    public function loadoutsCreate()
+    {
+        if ($this->getUser()) {
+            return $this->render('secnet/loadouts/create.html.twig', [
+                "secnetCommonData" => $this->secnetCommonData()
             ]);
         } else {
             return $this->redirectToRoute('home');

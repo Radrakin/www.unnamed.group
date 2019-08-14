@@ -18,6 +18,13 @@
     height: 90vh;
     margin: auto;
   }
+  .hidden {
+    display: none;
+  }
+  .datatable {
+    margin: 0 !important;
+    width: 100% !important;
+  }
 </style>
 {% endblock %}
 
@@ -46,6 +53,7 @@
             <th>FACTION</th>
             <th>NAME</th>
             <th>CAMO</th>
+            <th class="hidden">TERRAINS</th>
             <th>DESCRIPTION</th>
             <th>IMAGE</th>
           </tr>
@@ -56,11 +64,12 @@
               <td><a href="/api/loadout/{{x.code}}" target="_blank">{{x.code}}</a></td>
               <td>{{x.faction}}</td>
               <td>{{x.name}}</td>
-              <td>{{x.camo}}</td>
+              <td><span class="tooltipped" data-position="left" data-tooltip="{{x.terrains}}">{{x.camo}}</span></td>
+              <td class="hidden">{{x.terrains}}</td>
               <td style="max-width: 25vw;">{% filter markdown %}{{x.description}}{% endfilter %}</td>
-              <td style="max-width: 10vw;"><a class="modal-trigger" href="#modal1"><img class="responsive-img" src="{{x.image}}"></a></td>
+              <td style="max-width: 10vw;"><a class="modal-trigger" href="#modal-{{x.code}}"><img class="responsive-img" src="{{x.image}}"></a></td>
             </tr>
-            <div id="modal1" class="modal">
+            <div id="modal-{{x.code}}" class="modal">
               <div class="modal-content">
                 <img class="responsive-img" src="{{x.image}}">
               </div>
@@ -70,7 +79,50 @@
       </table>
     </div>
   </div>
-  <div id="personaltab" class="col s12"></div>
+  <div id="personaltab" class="col s12">
+    <div class="card-panel white black-text">
+      <div>
+        <h4 style="display:inline-block;">Personal Loadouts</h4>
+        <div style="float: right;">
+          <a class="waves-effect waves-light btn green" href="/secnet/loadouts/create"><i class="material-icons left">add</i>Create</a>
+          <a class="waves-effect waves-light btn blue disabled"><i class="material-icons left">edit</i>Edit</a>
+          <a class="waves-effect waves-light btn red disabled"><i class="material-icons left">remove</i>Delete</a>
+        </div>
+      </div>
+      <hr>
+      <table class="datatable">
+        <thead>
+          <tr>
+            <th>CODE</th>
+            <th>FACTION</th>
+            <th>NAME</th>
+            <th>CAMO</th>
+            <th class="hidden">TERRAINS</th>
+            <th>DESCRIPTION</th>
+            <th>IMAGE</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for x in loadouts.personal %}
+            <tr>
+              <td><a href="/api/loadout/{{x.code}}" target="_blank">{{x.code}}</a></td>
+              <td>{{x.faction}}</td>
+              <td>{{x.name}}</td>
+              <td><span class="tooltipped" data-position="left" data-tooltip="{{x.terrains}}">{{x.camo}}</span></td>
+              <td class="hidden">{{x.terrains}}</td>
+              <td style="max-width: 25vw;">{% filter markdown %}{{x.description}}{% endfilter %}</td>
+              <td style="max-width: 10vw;"><a class="modal-trigger" href="#modal-{{x.code}}"><img class="responsive-img" src="{{x.image}}"></a></td>
+            </tr>
+            <div id="modal-{{x.code}}" class="modal">
+              <div class="modal-content">
+                <img class="responsive-img" src="{{x.image}}">
+              </div>
+            </div>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
   <div id="themedtab" class="col s12"></div>
 </div>
 

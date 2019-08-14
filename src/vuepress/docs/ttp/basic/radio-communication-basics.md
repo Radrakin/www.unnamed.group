@@ -52,6 +52,7 @@ When switching between active radios, you will just have to set the PTT using AC
 ## 5. Keywords
 
 | Keyword | Meaning | Example |
+|:-:|:-:|:-:|
 | Over | The end of a message. | **Section Command**: Alpha this is Crossroads over. |
 | Send | The reciever is ready to hear the message. | **Section Command**: Alpha this is Crossroads over.<br/>**Assault Team Alpha**: This is Alpha, send over. |
 | Out | End of the radio conversation. | Example Below. |

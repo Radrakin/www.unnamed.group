@@ -4,7 +4,7 @@
 
 [![](/orbat-comms.png)](/orbat-comms.png)
 
-> UAG's structure may change during sessions to fit the current situation better, but the general structure supports our focus on "small team tactics" no matter how many people are attending a session. If you'd like to see what each section of our unit consists of click [here](https://docs.google.com/spreadsheets/d/1W4-Mh9GVGOE1lOUFWXP6kdn8-ff6zPSD_br0uqTUtdE/edit#gid=0).
+> UAG's structure may change during sessions to fit the current situation better, but the general structure supports our focus on "small team tactics" no matter how many people are attending a session. If you'd like to see what each section of our unit consists of click [here](unnamed.group/orbat).
 
 ### 1a. Crossroads
 

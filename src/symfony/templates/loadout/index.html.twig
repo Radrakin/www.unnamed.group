@@ -1,5 +1,5 @@
 {% if returnSingleLoadout %}
-  {{loadout}}
+  {{loadout|raw}}
 {% else %}
   <ul>
     {% for x in loadoutsData %}

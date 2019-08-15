@@ -87,6 +87,19 @@ class MongoController extends AbstractController
         return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
     }
 
+    public function deleteOne($database = null, $collection = null, $findCriteria = null)
+    {
+        if ($database && $collection && $findCriteria) {
+            $deleteResponse = ($this->getMongoClient())->$database->$collection->deleteOne($findCriteria);
+
+            return new JsonResponse(["success" => "1", "message" => $deleteResponse], Response::HTTP_OK);
+        } else {
+            return new JsonResponse(["success" => 0, "message" => "missing parameters"], Response::HTTP_BAD_REQUEST);
+        }
+
+        return new JsonResponse(["success" => 0, "message" => "generic error"], Response::HTTP_BAD_REQUEST);
+    }
+
     public function sumCommonFields($database = null, $collection = null, $findCriteria = null, $sumTarget = null)
     {
         if ($database && $collection && $findCriteria && $sumTarget) {

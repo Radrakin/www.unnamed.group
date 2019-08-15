@@ -35,7 +35,17 @@
 <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
 <div class="row">
+
   <div class="col s12">
+    {% if app.request.get("s") == "c1" %}
+      <script type="text/javascript">
+        M.toast({html: 'Loadout created!', displayLength: 2000, classes: "green"})
+      </script>
+    {% elseif app.request.get("s") == "d1" %}
+      <script type="text/javascript">
+        M.toast({html: 'Loadout deleted!', displayLength: 2000, classes: "red"})
+      </script>
+    {% endif %}
     <ul class="tabs">
       <li class="tab col s3"><a class="active" href="#publictab">Public</a></li>
       <li class="tab col s3"><a href="#personaltab">Personal</a></li>
@@ -85,14 +95,13 @@
         <h4 style="display:inline-block;">Personal Loadouts</h4>
         <div style="float: right;">
           <a class="waves-effect waves-light btn green" href="/secnet/loadouts/create"><i class="material-icons left">add</i>Create</a>
-          <a class="waves-effect waves-light btn blue disabled"><i class="material-icons left">edit</i>Edit</a>
-          <a class="waves-effect waves-light btn red disabled"><i class="material-icons left">remove</i>Delete</a>
         </div>
       </div>
       <hr>
       <table class="datatable">
         <thead>
           <tr>
+            <th>STATUS</th>
             <th>CODE</th>
             <th>FACTION</th>
             <th>NAME</th>
@@ -100,11 +109,13 @@
             <th class="hidden">TERRAINS</th>
             <th>DESCRIPTION</th>
             <th>IMAGE</th>
+            <th>ACTIONS</th>
           </tr>
         </thead>
         <tbody>
           {% for x in loadouts.personal %}
             <tr>
+              <td>approved</td>
               <td><a href="/api/loadout/{{x.code}}" target="_blank">{{x.code}}</a></td>
               <td>{{x.faction}}</td>
               <td>{{x.name}}</td>
@@ -112,6 +123,10 @@
               <td class="hidden">{{x.terrains}}</td>
               <td style="max-width: 25vw;">{% filter markdown %}{{x.description}}{% endfilter %}</td>
               <td style="max-width: 10vw;"><a class="modal-trigger" href="#modal-{{x.code}}"><img class="responsive-img" src="{{x.image}}" style="max-height: 15vh;"></a></td>
+              <td>
+                <a class="waves-effect waves-light btn blue disabled"><i class="material-icons left">edit</i>Edit</a>
+                <a class="waves-effect waves-light btn red" href="/api/user/loadout/{{x.code}}/delete?redirect=n4db3n"><i class="material-icons left">remove</i>Delete</a>
+              </td>
             </tr>
             <div id="modal-{{x.code}}" class="modal">
               <div class="modal-content">

@@ -91,6 +91,22 @@ class APIController extends AbstractController
       ]);
     }
 
+    /**
+     * @Route("/api/user/loadout/{code}/delete", methods={"GET"}, name="user/loadout/get/delete")
+     */
+    public function userLoadoutGetDelete(string $code)
+    {
+      $deleteResponse = json_decode($this->forward('App\Controller\MongoController::deleteOne', ["database" => "uagpmc-com", "collection" => "loadouts", "findCriteria" => ["code" => $code, "owner" => $this->getUser()->getDiscordId()]])->getContent(), true);
+
+      if (isset($_GET["redirect"])) {
+        if ($_GET["redirect"] === "n4db3n") {
+          return $this->redirectToRoute("secnet/loadouts", ["s" => "d1", '_fragment' => 'personaltab']);
+        }
+      }
+
+      return new JsonResponse([ "success" => 1, "message" => $deleteResponse ], Response::HTTP_OK);
+    }
+
 	/**
 	 * @Route("/api/loadouts/list", name="api/loadouts/list")
 	 */
@@ -158,6 +174,10 @@ class APIController extends AbstractController
       ];
 
       $loadoutsCollection = $this->forward('App\Controller\MongoController::insertOne', ["database" => "uagpmc-com", "collection" => "loadouts", "data" => $dataToSend]);
+
+      if ($_POST["origin"] === "page/create") {
+        return $this->redirectToRoute("secnet/loadouts", ["s" => "c1", '_fragment' => 'personaltab']);
+      }
 
       return new JsonResponse([ "success" => 1, "message" => "loadout submitted!", "loadoutCode" => $loadoutCode ], Response::HTTP_OK);
     } catch (\Exception $e) {

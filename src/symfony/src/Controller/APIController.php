@@ -82,8 +82,25 @@ class APIController extends AbstractController
      */
     public function indexGet(string $code)
     {
-      $loadout = json_decode($this->forward('App\Controller\APIController::getLoadoutFromCode', ["loadoutCode" => $code])->getContent(), true);
-      $loadoutFinal = json_decode($loadout["message"][0], true)["message"][0]["content"];
+      $apiRes = json_decode($this->forward('App\Controller\APIController::getLoadoutFromCode', ["loadoutCode" => $code])->getContent(), true);
+      $loadout = json_decode($apiRes["message"][0], true)["message"][0];
+
+      $loadoutFinal = "";
+
+      if (strlen($loadout["parent"]) > 0) {
+        try {
+          $apiResParent = json_decode($this->forward('App\Controller\APIController::getLoadoutFromCode', ["loadoutCode" => $loadout["parent"]])->getContent(), true);
+          $loadoutFinal .= json_decode($apiResParent["message"][0], true)["message"][0]["content"];
+        } catch (\Exception $e) {
+          $loadoutFinal .= "hint 'parent ID set, but cannot find it in database!';";
+        }
+        $apiResParent = json_decode($this->forward('App\Controller\APIController::getLoadoutFromCode', ["loadoutCode" => $loadout["parent"]])->getContent(), true);
+        $loadoutFinal .= json_decode($apiResParent["message"][0], true)["message"][0]["content"];
+      } else {
+        $loadoutFinal .= "comment 'no parent ID set, skipping parent import';";
+      }
+
+      $loadoutFinal .= ";;;".$loadout["content"];
 
       return $this->render('loadout/index.html.twig', [
           'returnSingleLoadout' => true,
@@ -166,6 +183,7 @@ class APIController extends AbstractController
         "faction" => $_POST["faction"],
         "camo" => $_POST["camo"],
         "terrains" => $_POST["terrains"],
+        "parent" => $_POST["parent"],
         "description" => $_POST["name"],
         "image" => $_POST["imageB64"],
         "content" => $_POST["content"],

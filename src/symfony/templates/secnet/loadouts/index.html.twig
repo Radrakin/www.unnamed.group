@@ -60,6 +60,7 @@
         <thead>
           <tr>
             <th>CODE</th>
+            <th>PARENT</th>
             <th>FACTION</th>
             <th>NAME</th>
             <th>CAMO</th>
@@ -72,6 +73,7 @@
           {% for x in loadouts.public %}
             <tr>
               <td><a href="/api/loadout/{{x.code}}" target="_blank">{{x.code}}</a></td>
+              <td><a href="/api/loadout/{{x.parent}}" target="_blank">{{x.parent}}</a></td>
               <td>{{x.faction}}</td>
               <td>{{x.name}}</td>
               <td><span class="tooltipped" data-position="left" data-tooltip="{{x.terrains}}">{{x.camo}}</span></td>
@@ -103,6 +105,7 @@
           <tr>
             <th>STATUS</th>
             <th>CODE</th>
+            <th>PARENT</th>
             <th>FACTION</th>
             <th>NAME</th>
             <th>CAMO</th>
@@ -117,6 +120,7 @@
             <tr>
               <td>approved</td>
               <td><a href="/api/loadout/{{x.code}}" target="_blank">{{x.code}}</a></td>
+              <td><a href="/api/loadout/{{x.parent}}" target="_blank">{{x.parent}}</a></td>
               <td>{{x.faction}}</td>
               <td>{{x.name}}</td>
               <td><span class="tooltipped" data-position="left" data-tooltip="{{x.terrains}}">{{x.camo}}</span></td>

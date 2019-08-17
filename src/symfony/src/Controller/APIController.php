@@ -89,8 +89,19 @@ class APIController extends AbstractController
 
       if (strlen($loadout["parent"]) > 0) {
         try {
+          //TODO: this is horrible, needs improving! maybe loop->array population?
           $apiResParent = json_decode($this->forward('App\Controller\APIController::getLoadoutFromCode', ["loadoutCode" => $loadout["parent"]])->getContent(), true);
+          try {
+            $apiResParentOfParent = json_decode($this->forward('App\Controller\APIController::getLoadoutFromCode', ["loadoutCode" => json_decode($apiResParent["message"][0], true)["message"][0]["parent"]])->getContent(), true);
+            $loadoutFinal .= "comment 'gen0starting';";
+            $loadoutFinal .= json_decode($apiResParentOfParent["message"][0], true)["message"][0]["content"];
+            $loadoutFinal .= "comment 'gen0ended';";
+          } catch (\Exception $e) {
+            $loadoutFinal .= "hint 'cannot find gen0 parent!';";
+          }
+          $loadoutFinal .= "comment 'gen1starting';";
           $loadoutFinal .= json_decode($apiResParent["message"][0], true)["message"][0]["content"];
+          $loadoutFinal .= "comment 'gen1ended';";
         } catch (\Exception $e) {
           $loadoutFinal .= "hint 'parent ID set, but cannot find it in database!';";
         }

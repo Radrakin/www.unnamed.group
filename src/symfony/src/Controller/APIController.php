@@ -96,7 +96,7 @@ class APIController extends AbstractController
             try {
               $apiResParentOfParentOfParent = json_decode($this->forward('App\Controller\APIController::getLoadoutFromCode', ["loadoutCode" => json_decode($apiResParentOfParent["message"][0], true)["message"][0]["parent"]])->getContent(), true);
               $loadoutFinal .= "comment 'gen-1starting';";
-              $loadoutFinal .= json_decode($apiResParentOfParent["message"][0], true)["message"][0]["content"];
+              $loadoutFinal .= json_decode($apiResParentOfParentOfParent["message"][0], true)["message"][0]["content"];
               $loadoutFinal .= "comment 'gen-1ended';";
             } catch (\Exception $e) {
               $loadoutFinal .= "hint 'cannot find gen-1 parent!';";

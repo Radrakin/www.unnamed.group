@@ -24,18 +24,16 @@ RUN docker-php-ext-enable mongodb
 
 RUN mkdir /unnamed.group
 
-COPY ./src/symfony/ /unnamed.group/
+COPY . /unnamed.group/
 
 RUN cd /unnamed.group && \
       cp .env.prod .env && \
       composer install
 
-COPY ./src/vuepress/ /tmp/vuepress/
-
-RUN cd /tmp/vuepress/ && \
+RUN cd /unnamed.group/vuepress/ && \
       yarn && yarn build && cp -r public-inject/* public/ && \
       mkdir /unnamed.group/public/handbook/ && cp -r public/* /unnamed.group/public/handbook/
 
-EXPOSE 80/tcp
+EXPOSE 5000/tcp
 
-CMD php /unnamed.group/bin/console server:run *:80
+CMD php /unnamed.group/bin/console server:run *:5000

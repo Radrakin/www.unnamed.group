@@ -17,18 +17,13 @@ module.exports = {
   serviceWorker: true,
   themeConfig: {
     sidebar: {
-      "/the-unit/" : [
-        getSidebar("the-unit","The Unit", [
-          "code-of-conduct", "getting-started", "unit-organisation"
-        ])
-      ],
-      "/ttp/" : [
-        getSidebar("ttp/basic","Basic", [
-          "infantry-basics"
+      "/" : [
+        getSidebar("getting-started","Getting Started", [
+          "code-of-conduct", "first-time-setup"
         ]),
-        getSidebar("ttp/advanced","Advanced"),
-        getSidebar("ttp/leadership","Leadership")
-      ],
+        getSidebar("the-unit","The Unit"),
+        getSidebar("ttp","TTP")
+      ]
     },
     sidebarDepth: 2,
     displayAllHeaders: false,
@@ -40,15 +35,15 @@ module.exports = {
         items: [
           {
             text: "Code of Conduct",
-            link: "/the-unit/code-of-conduct"
+            link: "/getting-started/code-of-conduct"
           },
           {
-            text: "Getting Started",
-            link: "/the-unit/getting-started"
+            text: "First Time Setup",
+            link: "/getting-started/first-time-setup"
           },
           {
             text: "Medical Procedures",
-            link: "/ttp/basic/medical-procedures"
+            link: "/.ttp/basic/medical-procedures"
           }
         ]
       }
@@ -59,7 +54,7 @@ module.exports = {
         buttonText: "Refresh?"
       }
     },
-    repo: "https://gogs.zeue.net/unnamed.group/handbook",
+    repo: "https://gitlab.com/zeue-oss/unnamed.group/www/tree/master/vuepress",
     repoLabel: "Contribute!",
     docsDir: "docs",
     editLinks: true,

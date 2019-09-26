@@ -25,3 +25,5 @@ yarn-error.log
 app.yaml
 dispatch.yaml
 /ignored/
+
+node_modulesdd

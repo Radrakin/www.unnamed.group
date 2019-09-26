@@ -59,8 +59,12 @@ There are some areas of our communications channels where streamers may be using
 - Any channel in the Discord under the "Streamer Area" channel category
 - The entire TeamSpeak server (this includes in-game TFAR/ACRE channels!)
 
+## 7. Can't Attend? Tell Us!
+
+If you cant attend a session please contact one of the "helpers" on discord or steam and let them know 24 hours in advance. Note that currently **Loonah** handles attendance for all members and shinies; she should be your first-contact for these matters.
+
 ## 69. Don't Listen to Collin
 
 Seriously, he's fucking retarded. Why do you guys keep listening to him like he even has a right to an opinion?
 
-
+## 71. Sammy is not cool.

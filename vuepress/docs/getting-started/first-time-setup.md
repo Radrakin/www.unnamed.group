@@ -50,3 +50,11 @@ It is recommended to set the keybinding for grenades (when throwing them) to "do
 #### Enhanced Movement
 
 In order to use the Enhanced Movement mod (climbing over walls or strategically using people as stools) you are required to assign a key of your choice to it. In order to do this go into the 'Options' menu, 'Controls' and then find 'Custom Controls' in the dropdown menu. Find "Use Action 1" and add your preferred key. The recommended key is the backslash '\' button.
+
+#### Quick Release Buckle
+
+When in combat, you may find it better to quickly drop your backpack, so you need to set a key for "Release Ruck" under `Controls -> Addons -> Quick Release Buckle`. We recommend **ALT+R**.
+
+#### Quick Release Buckle
+
+You can knockout players and AI with your weapon! To do this, look for the "Buttstroke" control under `Controls -> Addons -> TacSalmon Buttstroke`. We recommend using **CTRL+F**.

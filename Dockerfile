@@ -31,7 +31,7 @@ RUN cd /unnamed.group && \
       composer install
 
 RUN cd /unnamed.group/vuepress/ && \
-      yarn && yarn build && cp -r public-inject/* public/ && \
+      npm i && npm run build && cp -r public-inject/* public/ && \
       mkdir /unnamed.group/public/handbook/ && cp -r public/* /unnamed.group/public/handbook/
 
 EXPOSE 5000/tcp

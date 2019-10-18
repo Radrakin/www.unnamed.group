@@ -7,16 +7,19 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "vuepress dev docs",
+    "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "http-server": "^0.11.1"
+    "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
+    "@vuepress/plugin-nprogress": "^1.0.0-rc.1",
+    "darkreader": "^4.7.15",
+    "js-cookie": "^2.2.1",
+    "vuepress": "^1.2.0"
   },
   "devDependencies": {
     "patch-package": "^5.1.1",
-    "postinstall-postinstall": "^1.0.0",
-    "vuepress": "^1.0.0-alpha.24"
+    "postinstall-postinstall": "^1.0.0"
   }
 }

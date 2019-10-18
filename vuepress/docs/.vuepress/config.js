@@ -18,11 +18,10 @@ module.exports = {
   themeConfig: {
     sidebar: {
       "/" : [
-        getSidebar("getting-started","Getting Started", [
-          "code-of-conduct", "first-time-setup"
+        getSidebar("fundamentals","0: Fundamentals", [
+          "unit-introduction", "code-of-conduct", "first-time-setup"
         ]),
-        getSidebar("the-unit","The Unit"),
-        getSidebar("ttp","TTP")
+        getSidebar("infantryman-basics","1: Infantryman Basics")
       ]
     },
     sidebarDepth: 2,
@@ -35,15 +34,11 @@ module.exports = {
         items: [
           {
             text: "Code of Conduct",
-            link: "/getting-started/code-of-conduct"
+            link: "/fundamentals/code-of-conduct"
           },
           {
             text: "First Time Setup",
-            link: "/getting-started/first-time-setup"
-          },
-          {
-            text: "Medical Procedures",
-            link: "/.ttp/basic/medical-procedures"
+            link: "/fundamentals/first-time-setup"
           }
         ]
       }
@@ -62,12 +57,13 @@ module.exports = {
     algolia: {
       apiKey: "ad618428dcffec7d35c9f77b544b1d9a",
       indexName: "uagpmc"
-    }
+    },
+    searchPlaceholder: 'Search...'
   },
   markdown: {
     lineNumbers: true
   },
-  plugins: ["flowchart"]
+  plugins: ["@vuepress/nprogress", "@vuepress/back-to-top", require("./darkreader.js")]
 };
 
 function getSidebar(directory, title, order) {

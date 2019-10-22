@@ -17,6 +17,7 @@ module.exports = () => {
              var toggler = document.createElement("a");
 
              toggler.classList.add("repo-link");
+             toggler.href = "javascript:null";
 
              if (Cookies.get("darkModeToggle") === "1") {
                  DarkReader.enable(darkModeOptions);

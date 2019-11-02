@@ -22,6 +22,6 @@ publish:
     - docker build -t $CI_PROJECT_NAME .
     - docker tag $CI_PROJECT_NAME "eu.gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME"
     - docker push "eu.gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:latest"
-    - google-cloud-sdk/bin/gcloud --quiet beta run deploy www-unnamed-group --image "eu.gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:latest" --platform managed --region europe-west1 --project $GCLOUD_PROJECT_ID
+    - google-cloud-sdk/bin/gcloud --quiet beta run deploy www-unnamed-group --image "eu.gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:latest" --platform managed --region europe-west1 --project $GCLOUD_PROJECT_ID --allow-unauthenticated
   only:
     - master

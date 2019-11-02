@@ -34,6 +34,4 @@ RUN cd /unnamed.group/vuepress/ && \
       npm i && npm run build && cp -r public-inject/* public/ && \
       mkdir /unnamed.group/public/handbook/ && cp -r public/* /unnamed.group/public/handbook/
 
-EXPOSE 5000/tcp
-
-CMD php /unnamed.group/bin/console server:run *:5000
+CMD php /unnamed.group/bin/console server:run *:$PORT

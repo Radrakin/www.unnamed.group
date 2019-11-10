@@ -17,26 +17,26 @@ module.exports = {
   serviceWorker: true,
   themeConfig: {
     sidebar: {
-      "/" : [
-        getSidebar("fundamentals","0: Fundamentals", [
+      "/": [
+        getSidebar("fundamentals", "0: Fundamentals", [
           "unit-introduction",
           "code-of-conduct",
-          "first-time-setup",
+          "first-time-setup"
         ]),
-        getSidebar("infantryman-basics","1: Infantryman Basics", [
+        getSidebar("infantryman-basics", "1: Infantryman Basics", [
           "the-section",
-          "making-a-loadout",
-        //   "movement-techniques",
-        //   "situational-awareness",
-        //   "orienteering",
-        //   "basic-marksmanship",
-        //   "grenades",
-        //   "basic-medical-procedures",
-        //   "communication",
-        //   "basic-driving-skills",
-        //   "military-operations-in-urban-terrain",
-        //   "individual-initiative",
-        //   "fighting-at-night",
+          "making-a-loadout"
+          //   "movement-techniques",
+          //   "situational-awareness",
+          //   "orienteering",
+          //   "basic-marksmanship",
+          //   "grenades",
+          //   "basic-medical-procedures",
+          //   "communication",
+          //   "basic-driving-skills",
+          //   "military-operations-in-urban-terrain",
+          //   "individual-initiative",
+          //   "fighting-at-night",
         ]),
         // getSidebar("infantryman-specialisations","2: Infantryman Specialisations", [
         //   "bitch boy",
@@ -85,7 +85,7 @@ module.exports = {
         //   "common-leadership-problems",
         // ]),
         // getSidebar("staff","6: Staff"),
-        // getSidebar("resources","Resources")
+        getSidebar("resources", "Resources", ["orbats"])
       ]
     },
     sidebarDepth: 2,
@@ -103,6 +103,10 @@ module.exports = {
           {
             text: "First Time Setup",
             link: "/fundamentals/first-time-setup"
+          },
+          {
+            text: "ORBATs",
+            link: "/resources/orbats"
           }
         ]
       }
@@ -122,12 +126,19 @@ module.exports = {
       apiKey: "ad618428dcffec7d35c9f77b544b1d9a",
       indexName: "uagpmc"
     },
-    searchPlaceholder: 'Search...'
+    searchPlaceholder: "Search..."
   },
   markdown: {
-    lineNumbers: true
+    lineNumbers: true,
+    extendMarkdown: md => {
+      md.use(require("markdown-it-task-lists"), { enabled: true });
+    }
   },
-  plugins: ["@vuepress/nprogress", "@vuepress/back-to-top", require("./darkreader.js")]
+  plugins: [
+    "@vuepress/nprogress",
+    "@vuepress/back-to-top",
+    require("./darkreader.js")
+  ]
 };
 
 function getSidebar(directory, title, order) {
@@ -136,8 +147,7 @@ function getSidebar(directory, title, order) {
   if (order) {
     order.reverse();
     for (let i = 0; i < order.length; i++) {
-      _fileScan
-        .unshift(order[i] + ".md");
+      _fileScan.unshift(order[i] + ".md");
 
       //create temporary var to swap indexes 0 and 1, why isn't there just a swap() method?
       let temp = _fileScan[1];
@@ -145,24 +155,22 @@ function getSidebar(directory, title, order) {
       _fileScan[0] = temp;
     }
     //fancy new ES6 thing, map all elements of _fileScan to a new "set" which is an array without duplicates!
-    _fileScan = [... new Set(_fileScan)];
+    _fileScan = [...new Set(_fileScan)];
   }
 
-  let _children = _fileScan.map(
-      function (_x) {
-        let returned = directory + "/" + _x.replace(".md","");
+  let _children = _fileScan.map(function(_x) {
+    let returned = directory + "/" + _x.replace(".md", "");
 
-        if (returned.includes("README")) {
-          returned = returned.replace("README","")
-        }
+    if (returned.includes("README")) {
+      returned = returned.replace("README", "");
+    }
 
-        return "/" + returned;
-      }
-    );
+    return "/" + returned;
+  });
   let _sidebarConfig = {
     title: title,
     collapsable: true,
     children: _children
-  }
+  };
   return _sidebarConfig;
 }

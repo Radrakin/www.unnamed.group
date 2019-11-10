@@ -24,7 +24,7 @@ module.exports = {
           "first-time-setup",
         ]),
         getSidebar("infantryman-basics","1: Infantryman Basics", [
-          "the-fireteam",
+          "the-section",
           "making-a-loadout",
         //   "movement-techniques",
         //   "situational-awareness",

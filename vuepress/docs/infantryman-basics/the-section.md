@@ -4,6 +4,6 @@ The "section" is the core component of our organisation. Each section is split i
 
 ## Typical Infantry Section Structure
 
-[![](/tiss.png)](/tiss.png)
+[![](/handbook/tiss.png)](/handbook/tiss.png)
 
-### 
+###

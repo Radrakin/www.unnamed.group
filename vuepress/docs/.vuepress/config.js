@@ -88,7 +88,7 @@ module.exports = {
         getSidebar("resources", "Resources", ["orbats"])
       ]
     },
-    sidebarDepth: 2,
+    sidebarDepth: 0,
     displayAllHeaders: false,
     activeHeaderLinks: true,
     lastUpdated: true,

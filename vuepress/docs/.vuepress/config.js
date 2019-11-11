@@ -25,8 +25,8 @@ module.exports = {
         ]),
         getSidebar("infantryman-basics", "1: Infantryman Basics", [
           "the-section",
-          "making-a-loadout"
-          //   "movement-techniques",
+          "making-a-loadout",
+          "movement-techniques"
           //   "situational-awareness",
           //   "orienteering",
           //   "basic-marksmanship",

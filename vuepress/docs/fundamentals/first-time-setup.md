@@ -1,5 +1,7 @@
 # First Time Setup
 
+[[TOC]]
+
 ## The Modpack
 
 Setting up the modpack is easy, but is quite unique from traditional setups. Because of this, we ask that you follow every step in this guide in order to properly download all of the mods and ensure you can jump into sessions without any issues.
@@ -29,7 +31,6 @@ Updating the modpack is simple! All you need to do is restart your **ArmA III La
 ## Radio Setup (ACRE2)
 
 Installing and setting up ACRE2 is easy! When we use ACRE2 it is automatically installed in our modpack and **once you launch the game it will automatically set up in your TeamSpeak 3 client!** All you need to do is just **enable the plugin** found in **Tools->Options->Addons** of your TS3 client. In case you have TFAR installed **make sure to disable it within the TS3 Client.**
-
 
 ## Configuration
 

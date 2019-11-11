@@ -129,6 +129,7 @@ module.exports = {
     searchPlaceholder: "Search..."
   },
   markdown: {
+    toc: { includeLevel: [1, 2] },
     lineNumbers: true,
     extendMarkdown: md => {
       md.use(require("markdown-it-task-lists"), { enabled: true });

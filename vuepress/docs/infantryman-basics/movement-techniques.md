@@ -4,6 +4,8 @@
 This document is still being worked on by our staff team
 :::
 
+[[TOC]]
+
 ## Formations
 
 ### Wedge

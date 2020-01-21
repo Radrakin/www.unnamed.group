@@ -1,9 +1,0 @@
-{% if returnSingleLoadout %}
-  {{loadout|raw}}
-{% else %}
-  <ul>
-    {% for x in loadoutsData %}
-      <li><a href="/loadouts/{{x.code}}">[{{x.code}}] {{x.name}}</a></li>
-    {% endfor %}
-  </ul>
-{% endif %}

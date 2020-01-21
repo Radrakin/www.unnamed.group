@@ -1,3 +1,0 @@
-# Tactics, Techniques, and Procedures
-
-`...`

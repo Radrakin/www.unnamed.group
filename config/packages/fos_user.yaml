@@ -1,7 +1,0 @@
-fos_user:
-    db_driver: mongodb
-    firewall_name: main
-    user_class: AppBundle\Document\User
-    from_email:
-        address: "no-reply.system@uagpmc.com"
-        sender_name: "no-reply.system@uagpmc.com"

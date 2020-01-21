@@ -1,0 +1,16 @@
+:8000 {
+    gzip
+    rewrite {
+        if {file} not favicon.ico
+        to {path} {path}/ /index.html
+    }
+}
+
+:8000/discord {
+    redir https://discordapp.com/invite/eNkDNRh
+}
+
+:8000/handbook {
+    gzip
+    rewrite .* handbookIndex.html
+}

@@ -12,5 +12,13 @@
 
 :8000/handbook {
     gzip
-    rewrite .* handbookIndex.html
+    root ./handbook/docs
+    browse
+    markdown /
+    redir 301 {
+        if {uri} not_ends_with /
+        if {uri} not_ends_with .md
+        if {uri} not_ends_with .png
+        / {uri}/
+    }
 }

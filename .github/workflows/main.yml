@@ -11,5 +11,8 @@ jobs:
       - uses: actions/checkout@v1
       - run: |
           docker login docker.pkg.github.com --username zeue --password ${{secrets.GITHUB_TOKEN}} && \
-          docker build -t docker.pkg.github.com/$GITHUB_REPOSITORY/master:latest . && \
-          docker push docker.pkg.github.com/$GITHUB_REPOSITORY/master:latest
+          docker build -t docker.pkg.github.com/$AUTHOR/$REPONAME/$REPONAME:latest . && \
+          docker push docker.pkg.github.com/$AUTHOR/$REPONAME/$REPONAME:latest
+        env:
+          AUTHOR: zeue
+          REPONAME: www.unnamed.group

@@ -1,4 +1,4 @@
-:8000 {
+0.0.0.0 {
     cache
     gzip
     rewrite {
@@ -7,7 +7,7 @@
     }
 }
 
-:8000/discord {
+0.0.0.0/discord {
     cache
     redir https://discordapp.com/invite/eNkDNRh
     nobots "1G.gzip" {
@@ -15,13 +15,13 @@
     }
 }
 
-:8000/handbook {
+0.0.0.0/handbook {
     cache
     gzip
     root ./handbook/public
 }
 
-:8000/secure {
+0.0.0.0/secure {
     cache
     gzip
     root ./secure
@@ -31,7 +31,7 @@
     }
 }
 
-:8000/files {
+0.0.0.0/files {
     cache
     gzip
     s3browser {
@@ -56,7 +56,7 @@
     }
 }
 
-:8000/api {
+0.0.0.0/api {
     cache
     root ./api
     realip 0.0.0.0/0

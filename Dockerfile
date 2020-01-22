@@ -14,4 +14,4 @@ RUN cd handbook && \
     npm install && \
     npm run build
 
-CMD [ "caddy" ]
+CMD [ "caddy", "-port", "3030", "-quic"]

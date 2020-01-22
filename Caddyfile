@@ -18,16 +18,7 @@
 :8000/handbook {
     cache
     gzip
-    root ./handbook/docs
-    browse
-    markdown / {
-        template ../template.html
-    }
-    redir 301 {
-        if {uri} not_ends_with /
-        if {file} not_has .
-        / {uri}/
-    }
+    root ./handbook/public
 }
 
 :8000/secure {

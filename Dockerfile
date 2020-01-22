@@ -10,4 +10,8 @@ RUN CADDY_TELEMETRY=on curl https://getcaddy.com | bash -s personal http.cache,h
 
 COPY . .
 
+RUN cd handbook && \
+    npm install && \
+    npm run build
+
 CMD [ "caddy" ]

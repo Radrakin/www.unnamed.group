@@ -1,45 +1,39 @@
 # Movement Techniques
 
-::: warning THIS DOCUMENT IS INCOMPLETE
-This document is still being worked on by our staff team
-:::
-
-[[TOC]]
-
-## Formations
+## formations
 
 ### Wedge
 
-[![](/handbook/formations/Wedge.jpg)](/handbook/formations/Wedge.jpg)
+[![](/handbook/.x/formations/Wedge.jpg)](/handbook/.x/formations/Wedge.jpg)
 
 ### Vee
 
-[![](/handbook/formations/Vee.jpg)](/handbook/formations/Vee.jpg)
+[![](/handbook/.x/formations/Vee.jpg)](/handbook/.x/formations/Vee.jpg)
 
 ### Column
 
-[![](/handbook/formations/Column.jpg)](/handbook/formations/Column.jpg)
+[![](/handbook/.x/formations/Column.jpg)](/handbook/.x/formations/Column.jpg)
 
 ### Staggered Column
 
-[![](/handbook/formations/Staggered-Column.jpg)](/handbook/formations/Staggered-Column.jpg)
+[![](/handbook/.x/formations/Staggered-Column.jpg)](/handbook/.x/formations/Staggered-Column.jpg)
 
 ### Line
 
-[![](/handbook/formations/Line.jpg)](/handbook/formations/Line.jpg)
+[![](/handbook/.x/formations/Line.jpg)](/handbook/.x/formations/Line.jpg)
 
 ### Baseline
 
-[![](/handbook/formations/Baseline.jpg)](/handbook/formations/Baseline.jpg)
+[![](/handbook/.x/formations/Baseline.jpg)](/handbook/.x/formations/Baseline.jpg)
 
 ### File
 
-[![](/handbook/formations/File.jpg)](/handbook/formations/File.jpg)
+[![](/handbook/.x/formations/File.jpg)](/handbook/.x/formations/File.jpg)
 
 ### Diamond
 
-[![](/handbook/formations/Diamond.jpg)](/handbook/formations/Diamond.jpg)
+[![](/handbook/.x/formations/Diamond.jpg)](/handbook/.x/formations/Diamond.jpg)
 
 ### Echelon
 
-[![](/handbook/formations/Echelon-R.jpg)](/handbook/formations/Echelon-R.jpg)
+[![](/handbook/.x/formations/Echelon-R.jpg)](/handbook/.x/formations/Echelon-R.jpg)

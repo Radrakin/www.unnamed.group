@@ -1,8 +1,10 @@
 0.0.0.0 {
     cache
     gzip
+    root ./terminal/public/
     rewrite {
         if {file} not favicon.ico
+        if {file} not script.js
         to {path} {path}/ /index.html
     }
 }
@@ -10,58 +12,35 @@
 0.0.0.0/discord {
     cache
     redir https://discordapp.com/invite/eNkDNRh
-    nobots "1G.gzip" {
-        regexp "^[Bb]ot"
-    }
 }
 
 0.0.0.0/handbook {
     cache
     gzip
-    root ./handbook/public
+    root ./handbook/public/
 }
 
-0.0.0.0/secure {
-    cache
-    gzip
-    root ./secure
-    basicauth / admin pass
-    nobots "1G.gzip" {
-        regexp "^[Bb]ot"
-    }
-}
-
-0.0.0.0/files {
-    cache
-    gzip
-    s3browser {
-		#key ADDKEYHERE
-		#secret ADDSECRETHERE
-		bucket gcs.unnamed.group
-		endpoint storage.googleapis.com
-		secure false
-		refresh 1m
-		debug false
-	}
-	proxy / http://gcs.unnamed.group {
-		header_upstream Host gcs.unnamed.group
-	}
-    redir 301 {
-        if {uri} not_ends_with /
-        if {file} not_has .
-        / {uri}/
-    }
-    nobots "1G.gzip" {
-        regexp "^[Bb]ot"
-    }
-}
-
-0.0.0.0/api {
-    cache
-    root ./api
-    realip 0.0.0.0/0
-    ratelimit * / 2 3 second
-    nobots "1G.gzip" {
-        regexp "^[Bb]ot"
-    }
-}
+# 0.0.0.0/files {
+#     cache
+#     gzip
+#     s3browser {
+# 		#key ADDKEYHERE
+# 		#secret ADDSECRETHERE
+# 		bucket gcs.unnamed.group
+# 		endpoint storage.googleapis.com
+# 		secure false
+# 		refresh 1m
+# 		debug false
+# 	}
+# 	proxy / http://gcs.unnamed.group {
+# 		header_upstream Host gcs.unnamed.group
+# 	}
+#     redir 301 {
+#         if {uri} not_ends_with /
+#         if {file} not_has .
+#         / {uri}/
+#     }
+#     nobots "1G.gzip" {
+#         regexp "^[Bb]ot"
+#     }
+# }

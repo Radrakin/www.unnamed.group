@@ -14,4 +14,8 @@ RUN cd handbook && \
     npm install && \
     npm run build
 
+RUN cd terminal && \
+    npm install && \
+    npm run build
+
 CMD caddy -port $PORT -quic

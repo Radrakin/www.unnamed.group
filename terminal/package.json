@@ -4,12 +4,13 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "build": "javascript-obfuscator script.js --output public/script.js --config obfuscator.json"
+    "build": "javascript-obfuscator script.js --output public/script.js --config obfuscator.json && terser public/script.js --compress --output public/script.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "javascript-obfuscator": "^0.24.6"
+    "javascript-obfuscator": "^0.24.6",
+    "terser": "^4.6.3"
   }
 }

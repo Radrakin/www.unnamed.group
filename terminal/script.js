@@ -57,7 +57,7 @@ function prompt() {
 
 function greetings() {
   return (
-    "[[;red;]Connected, terminal ID:" +
+    "[[;red;]Connected, terminal ID: " +
     randomNum(10, 1000000) +
     "]\n" +
     "[[;green;]host fingerprint uuid: " +

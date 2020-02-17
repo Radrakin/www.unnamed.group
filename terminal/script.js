@@ -2,8 +2,35 @@
 
 const commandPallette = {
   help: help,
+  about: about,
+  discord: discord,
   login: login
 };
+
+function about() {
+  return (
+    "\n[[;yellow;]Welcome to unnamed.group!]\n\n" +
+    "[[;lime;]Who We Are]\n" +
+    'Firstly, we’re not a "unit," we’re a group of friends who enjoy playing Arma together as the bad guys. Now that’s out of the way, we are the Unnamed Arma Group, an organization for mercenaries who care about nothing but getting the job done and getting paid. We operate with an arsenal more advanced than any other military force on the planet, meaning more opportunities to experience a unique perspective of Arma 3 MILSIM gameplay.\n\n' +
+    "[[;lime;]What We Expect]\n" +
+    "Due to the way we like to keep this group about having fun and just playing Arma together with friends, we don’t expect too much in terms of behaviour and protocol. All we expect from our members is respect and commitment to making UAG a place we can all enjoy. Other than that, we do have some basic requirements:\n- Legitimate copy of Arma 3\n- Working microphone\n- Intermediate English skills\n- Ability to achieve minimum attendance (one session a week)\n\n" +
+    "[[;lime;]Our Schedule]\n" +
+    "Every Saturday and Sunday at 18:00 UTC!\n\n" +
+    "[[;lime;]Still Interested?]\n" +
+    "Hit us up in Discord by running the following command: discord\n"
+  );
+}
+
+function discord() {
+  openInNewTab("https://unnamed.group/discord");
+}
+
+function openInNewTab(href) {
+  Object.assign(document.createElement("a"), {
+    target: "_blank",
+    href
+  }).click();
+}
 
 function help() {
   return Object.keys(commandPallette).join(", ");
@@ -29,16 +56,14 @@ function prompt() {
 }
 
 function greetings() {
-  greetingString = "";
-
-  greetingString +=
+  return (
     "[[;red;]Connected, terminal ID:" +
     randomNum(10, 1000000) +
     "]\n" +
     "[[;green;]host fingerprint uuid: " +
     uuidv4() +
     "]\n" +
-    "Welcome to UAGOS 20E (GNU/Linux 5.3.0-1011-gcp x86_64)\n\n" +
+    "Welcome to UAGOS 20.1E (UNL/UKNL 1.2.1-2400-gcp x86_64)\n\n" +
     "  System information as of " +
     getCurrentDateTime() +
     "\n\n" +
@@ -60,7 +85,8 @@ function greetings() {
     "  Swap usage:   " +
     randomNum(0, 90) +
     "%\n\n" +
-    "[[;yellow;]To list available commands run: help]\n\n";
+    "[[;yellow;]To learn more about the group, run: about]\n\n"
+  );
 
   return greetingString;
 }

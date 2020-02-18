@@ -52,7 +52,7 @@ function randomNum(min, max) {
 }
 
 function prompt() {
-  return "[[;lime;]>>> ]";
+  return "[[;lime;]=>> ]";
 }
 
 function greetings() {
@@ -67,22 +67,22 @@ function greetings() {
     "  System information as of " +
     getCurrentDateTime() +
     "\n\n" +
-    "  System load:  " +
+    "  System load: " +
     randomNum(0, 100) +
-    "%              Processes:           " +
+    "%\n  Processes: " +
     randomNum(10, 300) +
     "\n" +
-    "  Usage of /:   " +
+    "  Usage of /: " +
     randomNum(3, 98) +
-    "% of 999.58GB   Users logged in:     " +
+    "% of 999.58GB\n  Users logged in: " +
     randomNum(1, 39) +
     "\n" +
     "  Memory usage: " +
     randomNum(2, 73) +
-    "%                IP address for ens4: " +
+    "%\n  IP address for ens4: " +
     randomIPAddress() +
     "\n" +
-    "  Swap usage:   " +
+    "  Swap usage: " +
     randomNum(0, 90) +
     "%\n\n" +
     "[[;yellow;]To learn more about the group, run: about]\n\n"

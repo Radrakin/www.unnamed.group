@@ -10,7 +10,7 @@ RUN wget -O /bin/caddy https://github.com/caddyserver/caddy/releases/download/v2
 
 COPY . .
 
-RUN cd src/terminal && \
+RUN cd terminal && \
     npm install && \
     npm run build
 

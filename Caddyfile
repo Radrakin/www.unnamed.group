@@ -1,12 +1,9 @@
-0.0.0.0:{$PORT} {
-    handle /discord* {
-        redir https://discordapp.com/invite/eNkDNRh
-    }
-    handle /terminal* {
-        rewrite * ./src/terminal/public/
-        file_server
-    }
-    handle {
-        redir / /terminal temporary
-    }
+:{$PORT}
+
+encode gzip
+root terminal/public
+file_server
+
+route /discord* {
+    redir https://discordapp.com/invite/eNkDNRh
 }

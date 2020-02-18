@@ -4,16 +4,6 @@
 Take care when reviewing this document, as it's contents are highly volatile and may completely change at any moment
 :::
 
-[[TOC]]
-
-<!--
-## Legend
-
-Symbol | Meaning
-:- [ ]:|:- [ ]:
-`**` | Element Leadership
--->
-
 ## Wolfpack (Motorised Infantry)
 
 ### Default

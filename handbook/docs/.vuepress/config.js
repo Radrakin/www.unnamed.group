@@ -18,77 +18,18 @@ module.exports = {
   themeConfig: {
     sidebar: {
       "/": [
-        getSidebar("fundamentals", "0: Fundamentals", [
+        getSidebar("fundamentals", "Fundamentals", [
           "unit-introduction",
           "code-of-conduct",
           "first-time-setup"
         ]),
-        getSidebar("infantryman-basics", "1: Infantryman Basics", [
-          "the-section",
-          "making-a-loadout",
-          "movement-techniques",
-          //   "situational-awareness",
-          "orienteering"
-          //   "basic-marksmanship",
-          //   "grenades",
-          //   "basic-medical-procedures",
-          //   "communication",
-          //   "basic-driving-skills",
-          //   "military-operations-in-urban-terrain",
-          //   "individual-initiative",
-          //   "fighting-at-night",
-        ]),
-        // getSidebar("infantryman-specialisations","2: Infantryman Specialisations", [
-        //   "bitch boy",
-        //   "pointman",
-        //   "marksman",
-        //   "autorifleman",
-        //   "grenadier",
-        //   "light anti-tank",
-        //   "corpsman",
-        // ]),
-        // getSidebar("advanced-techniques","3: Advanced Techniques", [
-        //   "machinegun-specialist",
-        //   "anti-tank-specialist",
-        //   "anti-air-specialist",
-        //   "advanced-medical-procedures",
-        //   "armoured-combat",
-        //   "crew-served-weapons",
-        //   "engineers",
-        //   "airborne-infantry",
-        //   "reconnaissance",
-        //   "artillery",
-        //   "survival-evasion-resistance-escape",
-        //   "special-operations",
-        //   "guerilla-warfare",
-        //   "marine-operations",
-        //   "divers",
-        // ]),
-        // getSidebar("aviation","4: Aviation", [
-        //   "text",
-        // ]),
-        // getSidebar("leadership","5: Leadership", [
-        //   "unit-organisation",
-        //   "fireteam-leader",
-        //   "section-commander",
-        //   "crossroads",
-        //   "mission-preparation",
-        //   "advanced-reporting",
-        //   "firemission-coordination",
-        //   "firefight-theory",
-        //   "assault-theory",
-        //   "defence-theory",
-        //   "ambush-tactics",
-        //   "combat-egress",
-        //   "convoy-operations",
-        //   "combined-arms",
-        //   "common-leadership-problems",
-        // ]),
-        // getSidebar("staff","6: Staff"),
+        getSidebar("basics", "The Basics", ["formations"]),
+        // getSidebar("advanced", "Advanced Topics", ["orbats"]),
+        // getSidebar("staff", "Staff", [""]),
         getSidebar("resources", "Resources", ["orbats"])
       ]
     },
-    sidebarDepth: 0,
+    sidebarDepth: 2,
     displayAllHeaders: false,
     activeHeaderLinks: true,
     lastUpdated: true,
@@ -136,9 +77,23 @@ module.exports = {
     }
   },
   plugins: [
-    "@vuepress/nprogress",
-    "@vuepress/back-to-top",
-    require("./darkreader.js")
+    require("./darkreader.js"),
+    require("./formationMaker.js"),
+    [
+      "vuepress-plugin-medium-zoom",
+      {
+        selector: "img",
+        delay: 1000,
+        options: {
+          margin: 24,
+          background: "#333",
+          scrollOffset: 0
+        }
+      }
+    ],
+    "flowchart",
+    "vuepress-plugin-export",
+    "img-lazy"
   ]
 };
 

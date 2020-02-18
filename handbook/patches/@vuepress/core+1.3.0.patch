@@ -1,0 +1,10 @@
+--- a/node_modules/@vuepress/core/lib/client/index.dev.html
++++ b/node_modules/@vuepress/core/lib/client/index.dev.html
+@@ -4,6 +4,7 @@
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <title></title>
++    <script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.6.0/two.min.js"></script>
+   </head>
+   <body>
+     <div id="app"></div>

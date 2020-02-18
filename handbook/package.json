@@ -9,17 +9,18 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
+    "pdf": "vuepress export docs",
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
-    "@vuepress/plugin-nprogress": "^1.0.0-rc.1",
     "darkreader": "^4.7.15",
     "js-cookie": "^2.2.1",
     "markdown-it-task-lists": "^2.1.1",
-    "vuepress": "^1.2.0"
-  },
-  "devDependencies": {
+    "vuepress": "^1.2.0",
+    "vuepress-plugin-export": "^0.2.0",
+    "vuepress-plugin-flowchart": "^1.4.3",
+    "vuepress-plugin-img-lazy": "^1.0.1",
+    "vuepress-plugin-medium-zoom": "^1.1.8",
     "patch-package": "^5.1.1",
     "postinstall-postinstall": "^1.0.0"
   }

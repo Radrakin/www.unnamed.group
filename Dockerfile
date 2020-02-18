@@ -3,19 +3,15 @@ FROM alpine:3
 WORKDIR /zeue/www.unnamed.group/
 
 RUN apk add --update \
-    curl bash npm git \
+    npm git wget \
     && rm -rf /var/cache/apk/*
 
-RUN CADDY_TELEMETRY=on curl https://getcaddy.com | bash -s personal http.cache,http.nobots,http.ratelimit,http.realip,http.s3browser
+RUN wget -O /bin/caddy https://github.com/caddyserver/caddy/releases/download/v2.0.0-beta.14/caddy2_beta14_linux_amd64 
 
 COPY . .
 
-RUN cd handbook && \
+RUN cd src/terminal && \
     npm install && \
     npm run build
 
-RUN cd terminal && \
-    npm install && \
-    npm run build
-
-CMD caddy -port $PORT -quic
+CMD caddy run

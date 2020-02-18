@@ -4,7 +4,6 @@ const commandPallette = {
   help: help,
   about: about,
   discord: discord,
-  handbook: handbook,
   login: login
 };
 
@@ -54,10 +53,6 @@ function randomNum(min, max) {
 
 function prompt() {
   return "[[;lime;]>>> ]";
-}
-
-function handbook() {
-  openInNewTab("https://unnamed.group/handbook");
 }
 
 function greetings() {

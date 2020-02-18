@@ -1,9 +1,0 @@
-patch-package
---- a/node_modules/@vuepress/theme-default/components/Page.vue
-+++ b/node_modules/@vuepress/theme-default/components/Page.vue
-@@ -29,3 +29,5 @@ export default {
-   display block
- 
- </style>
-+
-+<script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.6.0/two.min.js"></script>

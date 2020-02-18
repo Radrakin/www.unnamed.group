@@ -4,6 +4,7 @@ const commandPallette = {
   help: help,
   about: about,
   discord: discord,
+  handbook: handbook,
   login: login
 };
 
@@ -23,6 +24,10 @@ function about() {
 
 function discord() {
   openInNewTab("https://unnamed.group/discord");
+}
+
+function handbook() {
+  openInNewTab("https://unnamed.group/handbook");
 }
 
 function openInNewTab(href) {

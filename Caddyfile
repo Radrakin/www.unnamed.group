@@ -7,3 +7,7 @@ file_server
 route /discord* {
     redir https://discordapp.com/invite/eNkDNRh
 }
+
+route /handbook* {
+    redir https://github.com/zeue/www.unnamed.group/tree/preHandbookChange/handbook/docs/fundamentals
+}

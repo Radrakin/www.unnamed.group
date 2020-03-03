@@ -1,13 +1,38 @@
-:{$PORT}
+/ {
+    root ./root/
+}
 
-encode gzip
-root terminal/public
-file_server
+/arma, /arma3, /arma/ {
+    redir /arma3/
+}
 
-route /discord* {
+/arma3/ {
+    root ./arma3/terminal/public/
+}
+
+/starcitizen {
+    redir /starcitizen/
+}
+
+/starcitizen/ {
+    root ./starcitizen/
+    markdown {
+        css style.css
+    }
+}
+
+/terminal {
+    redir /terminal/
+}
+
+/terminal/ {
+    root ./terminal/dist/
+}
+
+/discord, /discord/* {
     redir https://discordapp.com/invite/eNkDNRh
 }
 
-route /handbook* {
-    redir https://github.com/zeue/www.unnamed.group/tree/preHandbookChange/handbook/docs/fundamentals
+/handbook, /handbook/* {
+    redir https://github.com/zeue/www.unnamed.group/tree/preHandbookChange/handbook/docs
 }

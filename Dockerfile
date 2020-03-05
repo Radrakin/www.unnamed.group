@@ -10,7 +10,7 @@ RUN curl https://getcaddy.com | bash -s personal
 
 COPY . .
 
-RUN cd terminal && \
+RUN cd arma3 && \
     npm install && \
     npm run build
 

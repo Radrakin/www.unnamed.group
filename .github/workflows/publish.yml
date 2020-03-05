@@ -15,4 +15,4 @@ jobs:
           docker push docker.pkg.github.com/$AUTHOR/$REPONAME/$REPONAME:latest
         env:
           AUTHOR: zeue
-          REPONAME: www-unnamed-group
+          REPONAME: www.unnamed.group

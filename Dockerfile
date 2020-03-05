@@ -18,4 +18,4 @@ RUN cd terminal && \
     npm install && \
     npm run build
 
-CMD caddy run
+CMD caddy

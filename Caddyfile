@@ -1,5 +1,5 @@
 / {
-    root ./root/
+    root ./src/root/
 }
 
 /arma, /arma3, /arma/ {
@@ -7,7 +7,7 @@
 }
 
 /arma3/ {
-    root ./arma3/terminal/public/
+    root ./src/arma3/
 }
 
 /starcitizen {
@@ -15,18 +15,7 @@
 }
 
 /starcitizen/ {
-    root ./starcitizen/
-    markdown {
-        css style.css
-    }
-}
-
-/terminal {
-    redir /terminal/
-}
-
-/terminal/ {
-    root ./terminal/dist/
+    root ./src/starcitizen/
 }
 
 /discord, /discord/* {

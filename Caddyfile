@@ -30,7 +30,7 @@
 }
 
 /discord, /discord/* {
-    redir https://discordapp.com/invite/eNkDNRh
+    redir https://discordapp.com/invite/5NEbhKU
 }
 
 /handbook, /handbook/* {

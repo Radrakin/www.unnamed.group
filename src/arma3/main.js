@@ -1,26 +1,35 @@
-import $ from "jquery";
-
 window.addEventListener("load", event => {
   localStorage.removeItem("currentBackgroundImageName");
 
   setInterval(() => {
-    $.getJSON("./gallery/manifest.json", data => {
-      let list = [];
-      data.children.forEach(element => {
-        list.push(element.name);
-      });
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "./gallery/manifest.json", true);
+    xmlhttp.onreadystatechange = () => {
+      if (xmlhttp.readyState == 4) {
+        if (xmlhttp.status == 200) {
+          let reponseJSON = JSON.parse(xmlhttp.responseText);
 
-      if (localStorage.getItem("currentBackgroundImageName") !== null) {
-        list = list.filter(item => {
-          return item !== localStorage.getItem("currentBackgroundImageName");
-        });
+          let list = [];
+          reponseJSON.children.forEach(element => {
+            list.push(element.name);
+          });
+
+          if (localStorage.getItem("currentBackgroundImageName") !== null) {
+            list = list.filter(item => {
+              return (
+                item !== localStorage.getItem("currentBackgroundImageName")
+              );
+            });
+          }
+
+          let random = list[Math.floor(Math.random() * list.length)];
+
+          localStorage.setItem("currentBackgroundImageName", random);
+
+          document.body.style.backgroundImage = "url(./gallery/" + random + ")";
+        }
       }
-
-      let random = list[Math.floor(Math.random() * list.length)];
-
-      localStorage.setItem("currentBackgroundImageName", random);
-
-      document.body.style.backgroundImage = "url(./gallery/" + random + ")";
-    });
+    };
+    xmlhttp.send(null);
   }, 3000);
 });

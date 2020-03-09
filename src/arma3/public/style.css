@@ -1,0 +1,45 @@
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  background: url("./gallery/default_background.image") no-repeat center center
+    fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  transition: background 1s ease;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px) saturate(0%);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Sen&display=swap");
+.content {
+  padding: 1em;
+  color: white;
+  font-family: "Sen", sans-serif;
+  max-width: 33vw;
+}
+
+.heading {
+  text-align: center;
+}
+
+.motto {
+  text-align: center;
+  font-style: italic;
+}

@@ -7,7 +7,7 @@
 }
 
 /arma3/ {
-    root ./src/arma3/
+    root ./src/arma3/public/
 }
 
 /starcitizen {

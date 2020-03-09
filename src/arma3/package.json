@@ -5,7 +5,6 @@
   },
   "dependencies": {
     "directory-tree": "^2.2.4",
-    "jquery": "^3.4.1",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
   }

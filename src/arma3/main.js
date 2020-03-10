@@ -31,5 +31,5 @@ window.addEventListener("load", event => {
       }
     };
     xmlhttp.send(null);
-  }, 3000);
+  }, 5000);
 });

@@ -1,16 +1,14 @@
-html,
-body {
+html {
   overflow: hidden;
 }
 
 body {
-  background: url("./gallery/default_background.image") no-repeat center center
-    fixed;
+  background: url("./gallery/default_background.image") no-repeat center;
   background-size: cover;
   margin: 0;
   padding: 0;
+  transition: background 0.1s linear;
   height: 100vh;
-  transition: background 1s ease;
 }
 
 .overlay {

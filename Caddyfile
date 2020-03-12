@@ -23,5 +23,5 @@
 }
 
 /handbook, /handbook/* {
-    redir https://github.com/zeue/www.unnamed.group/tree/preHandbookChange/handbook/docs
+    redir https://wiki.unnamed.group
 }

@@ -22,6 +22,6 @@
     redir https://discordapp.com/invite/5NEbhKU
 }
 
-/handbook, /handbook/* {
+/handbook, /handbook/*, /wiki, /wiki/* {
     redir https://wiki.unnamed.group
 }
